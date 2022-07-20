@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Repositório LGBT</title>
+	<!--<link rel="stylesheet" href="./css/style.css">-->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Open+Sans:wght@300;400;700&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="./css/reset.css">
+
+	<link rel="stylesheet" href="./css/partes/base.css">
+	<link rel="stylesheet" href="./css/partes/header.css">
+
+	<link rel="stylesheet" href="./css/partes/footer.css">
+
+	<link rel="stylesheet" href="./css/partes/aside.css">
+
+	<link rel="stylesheet" href="./css/partes/searchBar.css">
+	
+	<link rel="stylesheet" href="./css/partes/floatbutton.css">
+	<!--<link rel="stylesheet" href="./css/partes/filter.css">-->
+
+</head>
+
+<body>
+	<header class="header">
+		<img src="./assets/repositorio lgbt/coluna.png" alt="favicon" class="header__logo">
+		<nav class="header__nav">
+			<ul>
+				<li class="header__links">Home</li>
+				<li class="header__links">Contato</li>
+				<li class="header__links"><a href="./sobre.html">Sobre</a></li>
+				<li class="header__links">Contribua</li>
+				<li class="header__links">Ajuda</li>
+			</ul>
+		</nav>
+	</header>
+
+	<!--<div class="float__btn flex"  >
+		<button onsubmit="openModal()" class="btn btn-warning btnCircular btnPrincipal" name="float-filter" ><i class="fa fa-question">&#12299;</i>
+		</button>
+	</div>-->
+	<div class="content flex">
+		<div class="filter__ret--purple content ">
+			<div class="ion-icon">
+				<ion-icon name="chevron-forward-outline"></ion-icon>
+			</div>
+			<form method="post" action="#" class="filter__form">
+				<h3 class="h3">Filtro:</h3>
+				<input class="checkbox" type="checkbox" name="lesbica" value="lesbica" id="lesbica">
+				<label for="lesbica">lésbica</label><br>
+				<input class="checkbox" type="checkbox" name="gay" id="gay" value="gay">
+				<label for="gay">gay</label><br>
+				<input class="checkbox" type="checkbox" name="bissexualidade" id="bissexualidade" value="bissexualidade">
+				<label for="bissexualidade">bissexualidade</label><br>
+				<input class="checkbox" type="checkbox" name="travestis" id="travestis" value="travestis">
+				<label for="travestis">travestis</label><br>
+				<input class="checkbox" type="checkbox" name="transexuais" id="transexuais" value="transexuais">
+				<label for="transexuais">transexuais</label><br>
+				<input class="checkbox" type="checkbox" name="pessoasTrans" id="pessoas trans" value="pessoas trans">
+				<label for="pessoas trans">pessoas trans</label><br>
+				<input class="checkbox" type="checkbox" name="pansexualidade" id="pansexualidade" value="pansexualidade">
+				<label for="pansexualidade">pansexualidade</label><br>
+				<input class="checkbox" type="checkbox" name="artigos" id="artigos" value="artigos">
+				<label for="artigos">artigos</label><br>
+				<input type="checkbox" name="dissertacoes" id="dissertacoes" value="dissertacoes">
+				<label for="dissertacoes">dissertações</label><br>
+				<input class="checkbox" type="checkbox" name="escritosPorTrans" id="escritosPorTrans" value="escritosPorTrans">
+				<label for="escritosPorTrans">escritos por pessoas trans</label><br>
+				<input class="checkbox" type="checkbox" name="escritoPorLGBT" id="escritoPorLGBT" value="escritoPorLGBT">
+				<label for="escritoPorLGBT">escritos por pessoas LGBT</label><br>
+				<input type="checkbox" name="assexualidade" id="assexualidade" value="assexualidade">
+				<label for="assexualidade">assexualidade</label><br>
+				<input class="checkbox" type="checkbox" name="diversidade" id="diversidade" value="diversidade">
+				<label for="diversidade">diversidade</label><br>
+				<input class="checkbox" type="checkbox" name="lgbtfobia" id="lgbtfobia" value="lgbtfobia">
+				<label for="lgbtfobia">lgbtfobia</label><br>
+
+			</form>
+		</div>
+		<main>
+			<section class="search content filter__flex">
+				<div class="search__text">
+					<form name="form" class="search__toLookFor" method="post" action="#">
+						<input type="search" name="busca" list="pesquisa" placeholder="faça sua busca aqui" rows="500px" size="60"
+							aria-label="Digite seu campo de busca" class="search__searchBar">
+						<input type="submit" class="search__button" value="Pesquisar"><br>
+						<br>
+					</form>
+				</div>
+				<aside class="block content .filter__flex">
+
+					<!--fazer os links dos textos-->
+					<!-- para acada texto adicionado será criada uma div com o link pra essa página -->
+
+					
+				</aside>
+				<p>tem algum texto que gostaria de incluir aqui? entre em contato comigo nesse <a
+						href="mailto:charliebftm@gmail.com">Email</a></p>
+
+						<div id="like_button_container"></div>
+			</section>
+		</main>
+		<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+		<script src="./src/float.js"></script>
+		<script src="./src/index.js" defer type="module"></script>
+		<!--<script src="./src/modal.js"></script>-->
+
+
+		<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+		
+		<!-- Load our React component. -->
+		<script src="like_button.js"></script>
+		<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</body>
+<footer class="footer">
+	<img src="./assets/repositorio lgbt/coluna.png" alt="favicon" class="footer__logo">
+	<ul class="footer__social">
+		<li><a href="mailto:charliebftm@gmail.com" class="footer__midia">charliebftm@gmail.com</a></li>
+	</ul>
+
+	<nav>
+		<ul class="footer__nav">
+			<li class="footer__links">Home</li>
+			<li class="footer__links">Contato</li>
+			<li class="footer__links"><a href="./sobre/sobre.html">Sobre</a></li>
+			<li class="footer__links">Contribua</li>
+			<li class="footer__links">Ajuda</li>
+		</ul>
+	</nav>
+</footer>
+
+</html>
