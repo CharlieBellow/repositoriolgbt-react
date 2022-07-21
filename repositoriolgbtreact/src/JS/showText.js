@@ -1,3 +1,5 @@
+//import Text from "../Text.js";
+
 export function showText(array) {
 	// tentativa de verificar se existe div dentro do aside, se tiver ele apaga enquanto existir. se não tiver ele executa o código da função que mostra o texto
 
@@ -6,9 +8,7 @@ export function showText(array) {
 		while (document.querySelector(".block").querySelector("div")) {
 			document
 				.querySelector(".block")
-				.removeChild(
-					document.querySelector(".block").querySelector("div")
-				);
+				.removeChild(document.querySelector(".block").querySelector("div"));
 		}
 	}
 
@@ -16,7 +16,7 @@ export function showText(array) {
 		let text = array[index];
 
 		const html = `
-			<h3><a class="title" href="./texto.html">${text.titulo}</a> <p class="icon">4.5</p></h3>
+			<h3><a class="title" href={Text}>${text.titulo}</a> <p class="icon">4.5</p></h3>
 			<p class="description">${text.descricao}</p> <br> <br>
 		`;
 

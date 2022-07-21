@@ -1,27 +1,27 @@
-import { useState, useEffect } from "react";
+//import { useState, useEffect } from "react";
 
 
-import { textDataBase } from "../JS/textDataBase";
-import { searchByTitle } from "../JS/searchByTitle.js";
-import { showText } from "../JS/showText.js";
-
+//import { textDataBase } from "../JS/textDataBase";
+//import { searchByTitle } from "../JS/searchByTitle.js";
+//import { showText } from "../JS/showText.js";
+//
 function Main() {
-
-  const [mostraTextos, useMostraTextos] = useState(showText(textDataBase));
-
-  const searchButton = (e) => {
-    e.preventDefault();
-
-    const resultOfSearch = searchByTitle(textDataBase);
-    
-    
-  }
-	
-  
-  useEffect(() => {
-    showText(searchButton);
-
-  })
+//
+//  const [mostraTextos, useMostraTextos] = useState(showText(textDataBase));
+//
+//  const searchButton = (e) => {
+//    e.preventDefault();
+//
+//    const resultOfSearch = searchByTitle(textDataBase);
+//    
+//    
+//  }
+//	
+//  
+//  useEffect(() => {
+//    showText(searchButton);
+//
+//  })
 
 	return (
 		<>
@@ -55,7 +55,7 @@ function Main() {
 					</div>
 					<aside
 						className="block content .filter__flex"
-						onClick={searchButton}
+						
 					></aside>
 
 					<p>

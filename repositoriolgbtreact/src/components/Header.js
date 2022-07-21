@@ -1,3 +1,7 @@
+import Sobre from '../Sobre.js'
+
+
+
 function Header() {
   return (
 		<>
@@ -12,7 +16,7 @@ function Header() {
 						<li className="header__links">Home</li>
 						<li className="header__links">Contato</li>
 						<li className="header__links">
-							<a href="./sobre.html">Sobre</a>
+							<a href={Sobre}>Sobre</a>
 						</li>
 						<li className="header__links">Contribua</li>
 						<li className="header__links">Ajuda</li>
@@ -23,4 +27,4 @@ function Header() {
 	);
 }
 
-export default Header
+export default Header;
