@@ -176,11 +176,11 @@ para isso:
 
 import { useState } from "react"
 
-e criar uma const e entre colchetes coloca o nome Do Que Vai Modificar e o prefixo set com o nome anterior. E essa variável vai receber a funcao useState. Ex.:
+e criar uma const e entre colchetes coloca o nome Do Que Vai Modificar e o prefixo set com o nome anterior. E essa variável vai receber a função useState. Ex.:
 
 const [minhaVariavel, setMinhaVariavel] = useState(valorPadrãoQueVaiComeçarNessaVariável)
 
-Nesse caso, o hook está sendo invocada para gerenciar o acesso ao valor da variável e a alteração d valor da variável (respectivamente). Isso me dá a possibilidade de consultar e alterar essa variável
+Nesse caso, o hook está sendo invocada para gerenciar o acesso ao valor da variável e a alteração do valor da variável (respectivamente). Isso me dá a possibilidade de consultar e alterar essa variável
 
 depois cria a função que vai gerenciar:
 
