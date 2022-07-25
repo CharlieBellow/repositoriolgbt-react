@@ -1,14 +1,5 @@
-//import { useState, useEffect } from "react";
-
-
-
-//import textDataBase from "../JS/textDataBase";
-//import searchByTitle from "../JS/searchByTitle.js";
-//import showText  from "../JS/showText.js";
-import Text from "../Text.js"; // página de texto
-
-import {Autor}  from "../JS/Autor.js";
-import { Texto } from "../JS/Texto.js";
+import { Autor } from "./Autor.js";
+import { Texto } from "./Texto.js";
 
 /* Index ------------------------------------------------------------------------------------------------ */
 
@@ -141,38 +132,25 @@ const textoTransfeminismo = new Texto(
 	"transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero"
 );
 
-//const textDataBase = [];
-//// adicionando os textos criados dentro do array
-//textDataBase.push(
-//	textoTransformandoAUniversidade,
-//	textoSeraQueTemosDireito,
-//	textoUmEstudoEtnografico,
-//	textoAInvencaoDaHomossexualidade,
-//	textoUmProblemaDeGenero,
-//	textoAExperienciaDaCidade,
-//	textoAProstituicaoComo,
-//	textoAutobiografiasTrans,
-//	textoTransSexualidade,
-//	textoTransfeminismo
-//);
-//
-function Main() {
-//
-//  const [mostraTextos, useMostraTextos] = useState(showText(textDataBase));
-//
-//  const searchButton = (e) => {
-//    e.preventDefault();
-//
-//    const resultOfSearch = searchByTitle(textDataBase);
-//    
-//    
-//  }
-//	
-//  
-//  useEffect(() => {
-//    showText(searchButton);
-//
-//  })
+const textDataBase = [];
+// adicionando os textos criados dentro do array
+textDataBase.push(
+	textoTransformandoAUniversidade,
+	textoSeraQueTemosDireito,
+	textoUmEstudoEtnografico,
+	textoAInvencaoDaHomossexualidade,
+	textoUmProblemaDeGenero,
+	textoAExperienciaDaCidade,
+	textoAProstituicaoComo,
+	textoAutobiografiasTrans,
+	textoTransSexualidade,
+	textoTransfeminismo
+);
+
+//console.log(textDataBase);
+
+
+const TextDataBase = () => {
 	
 	const textDataBase = [];
 	// adicionando os textos criados dentro do array
@@ -189,76 +167,24 @@ function Main() {
 		textoTransfeminismo
 	);
 
-	
-	
-	
-	
+
 
 	return (
-		<>
-			<main>
-				<section className="search content filter__flex">
-					<div className="search__text">
-						<form
-							name="form"
-							className="search__toLookFor"
-							method="post"
-							action="#"
-						>
-							<input
-								type="search"
-								name="busca"
-								list="pesquisa"
-								placeholder="faça sua busca aqui"
-								rows="500px"
-								size="60"
-								aria-label="Digite seu campo de busca"
-								className="search__searchBar"
-							/>
-							<input
-								type="submit"
-								className="search__button"
-								value="Pesquisar"
-							/>
-							<br></br>
-							<br></br>
-						</form>
-					</div>
-					<aside className="block content .filter__flex">
-						{/* textos */}
-						{/*<h3>
-							<a class="title" href="#">
-								{text.titulo}
-							</a>{" "}
-							<p class="icon">4.5</p>
-						</h3>
-						<p class="description">descricao</p> <br></br>*/}
-
-						<div>
-							{textDataBase.map(text => (
-								// lembrar de colocar o key={item.id} pra ele identificar o elemento que ele tá trabalhando
-								<>
-									<h3>
-										<a className="title" href={Text}>
-											{text.titulo}
-										</a>{" "}
-										<p className="icon">4.5</p>
-									</h3>
-									<p className="description">{text.descricao}</p> <br></br>
-								</>
-							))}
-						</div>
-					</aside>
-
-					<p>
-						tem algum texto que gostaria de incluir aqui? entre em contato
-						comigo nesse <a href="mailto:charliebftm@gmail.com">Email</a>
-					</p>
-
-					<div id="like_button_container"></div>
-				</section>
-			</main>
-		</>
+		<div>
+			{TextDataBase.map(textDataBase => (
+				// lembrar de colocar o key={item.id} pra ele identificar o elemento que ele tá trabalhando
+				<>
+					<h3>
+						<a class="title" href={Text}>
+							{textDataBase.titulo}
+						</a>{" "}
+						<p class="icon">4.5</p>
+					</h3>
+					<p class="description">{textDataBase.descricao}</p> <br></br>
+				</>
+			))}
+		</div>
 	);
-}
-export default Main;
+};
+
+export default TextDataBase;

@@ -16,6 +16,9 @@ import Header from "./components/Header.js"
 import Filter from './components/Filter.js'
 import Main from './components/Main.js'
 import Footer from './components/Footer.js'
+//import Text from "./components/Text";
+//import TextDataBase from './components/TextDataBase.js'
+
 
 function App() {
   return (
@@ -24,7 +27,9 @@ function App() {
 
         <Header />
         <Filter />
-        <Main />
+      <Main />
+      {/*<Text />*/}
+      {/*<TextDataBase/>*/}
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 		  {/*<script src="./src/float.js"></script>*/}
