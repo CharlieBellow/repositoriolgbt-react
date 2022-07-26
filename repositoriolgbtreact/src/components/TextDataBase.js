@@ -1,5 +1,5 @@
-import { Autor } from "./Autor.js";
-import { Texto } from "./Texto.js";
+import { Autor } from "../JS/Autor";
+import { Texto } from "../JS/Texto";
 
 /* Index ------------------------------------------------------------------------------------------------ */
 
@@ -131,21 +131,21 @@ const textoTransfeminismo = new Texto(
 	"qualqer coisa",
 	"transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero"
 );
-
-const textDataBase = [];
-// adicionando os textos criados dentro do array
-textDataBase.push(
-	textoTransformandoAUniversidade,
-	textoSeraQueTemosDireito,
-	textoUmEstudoEtnografico,
-	textoAInvencaoDaHomossexualidade,
-	textoUmProblemaDeGenero,
-	textoAExperienciaDaCidade,
-	textoAProstituicaoComo,
-	textoAutobiografiasTrans,
-	textoTransSexualidade,
-	textoTransfeminismo
-);
+//
+//const textDataBase = [];
+//// adicionando os textos criados dentro do array
+//textDataBase.push(
+//	textoTransformandoAUniversidade,
+//	textoSeraQueTemosDireito,
+//	textoUmEstudoEtnografico,
+//	textoAInvencaoDaHomossexualidade,
+//	textoUmProblemaDeGenero,
+//	textoAExperienciaDaCidade,
+//	textoAProstituicaoComo,
+//	textoAutobiografiasTrans,
+//	textoTransSexualidade,
+//	textoTransfeminismo
+//);
 
 //console.log(textDataBase);
 

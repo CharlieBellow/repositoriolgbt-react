@@ -6,10 +6,14 @@
 //import searchByTitle from "../JS/searchByTitle.js";
 //import showText  from "../JS/showText.js";
 import Text from "../Text.js"; // página de texto
+//import searchByTitle from '../JS/searchByTitle.js'
 
 import {Autor}  from "../JS/Autor.js";
 import { Texto } from "../JS/Texto.js";
 
+//import BarraDeBusca from './BarraDeBusca.js'
+//import Botao from './Botao'
+import FormBusca from './FormBusca.js'
 /* Index ------------------------------------------------------------------------------------------------ */
 
 const scote = new Autor("Fausto", "Scote", "Ciências Sociais");
@@ -190,7 +194,19 @@ function Main() {
 	);
 
 	
-	
+	//function searchByTitle(a, searchTerm) {
+	//	let newArray = [];
+	//	for (let i = 0; i < a.length; i++) {
+	//		if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
+	//			newArray.push(a[i]);
+	//		} else if (a[i].descricao.toLowerCase().includes(searchTerm.toLowerCase())) {
+	//			newArray.push(a[i]);
+	//		} else if (a[i].categoria.toLowerCase().includes(searchTerm.toLowerCase())) {
+	//			newArray.push(a[i]);
+	//		}
+	//	}
+	//	return newArray;
+	//}
 	
 	
 
@@ -199,13 +215,15 @@ function Main() {
 			<main>
 				<section className="search content filter__flex">
 					<div className="search__text">
-						<form
+						<FormBusca/>
+						{/*<form
 							name="form"
 							className="search__toLookFor"
 							method="post"
 							action="#"
-						>
-							<input
+						>*/}
+							{/* esse botão tem que transformar em componente pra poder pegar o que foi digitado na tela? */}
+							{/*<input
 								type="search"
 								name="busca"
 								list="pesquisa"
@@ -214,15 +232,19 @@ function Main() {
 								size="60"
 								aria-label="Digite seu campo de busca"
 								className="search__searchBar"
-							/>
-							<input
+								value=""
+							/>*/}
+							{/*<BarraDeBusca />*/}
+							{/*<Botao />*/}
+							{/*<input
 								type="submit"
 								className="search__button"
 								value="Pesquisar"
-							/>
+								onSubmit={searchByTitle(textDataBase, input.value)}
+							/>*/}
+							{/*<br></br>
 							<br></br>
-							<br></br>
-						</form>
+						</form>*/}
 					</div>
 					<aside className="block content .filter__flex">
 						{/* textos */}
