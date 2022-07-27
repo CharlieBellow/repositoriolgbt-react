@@ -5,7 +5,11 @@
 //import textDataBase from "../JS/textDataBase";
 //import searchByTitle from "../JS/searchByTitle.js";
 //import showText  from "../JS/showText.js";
-import Text from "../Text.js"; // página de texto
+
+
+//import React, { useState } from "react";
+//import { Redirect } from "react-router-dom";
+//import Text from "../Text.js"; // página de texto
 //import searchByTitle from '../JS/searchByTitle.js'
 
 import {Autor}  from "../JS/Autor.js";
@@ -160,6 +164,16 @@ const textoTransfeminismo = new Texto(
 //	textoTransfeminismo
 //);
 //
+
+
+
+
+
+
+
+
+
+
 function Main() {
 //
 //  const [mostraTextos, useMostraTextos] = useState(showText(textDataBase));
@@ -208,22 +222,23 @@ function Main() {
 	//	return newArray;
 	//}
 	
-	
+	//const [state,setState] = useState(false);
+  let url="../Text";
 
 	return (
 		<>
 			<main>
 				<section className="search content filter__flex">
 					<div className="search__text">
-						<FormBusca/>
+						<FormBusca />
 						{/*<form
 							name="form"
 							className="search__toLookFor"
 							method="post"
 							action="#"
 						>*/}
-							{/* esse botão tem que transformar em componente pra poder pegar o que foi digitado na tela? */}
-							{/*<input
+						{/* esse botão tem que transformar em componente pra poder pegar o que foi digitado na tela? */}
+						{/*<input
 								type="search"
 								name="busca"
 								list="pesquisa"
@@ -234,15 +249,15 @@ function Main() {
 								className="search__searchBar"
 								value=""
 							/>*/}
-							{/*<BarraDeBusca />*/}
-							{/*<Botao />*/}
-							{/*<input
+						{/*<BarraDeBusca />*/}
+						{/*<Botao />*/}
+						{/*<input
 								type="submit"
 								className="search__button"
 								value="Pesquisar"
 								onSubmit={searchByTitle(textDataBase, input.value)}
 							/>*/}
-							{/*<br></br>
+						{/*<br></br>
 							<br></br>
 						</form>*/}
 					</div>
@@ -261,7 +276,7 @@ function Main() {
 								// lembrar de colocar o key={item.id} pra ele identificar o elemento que ele tá trabalhando
 								<>
 									<h3>
-										<a className="title" href={Text}>
+										<a href={url} className="title">
 											{text.titulo}
 										</a>{" "}
 										<p className="icon">4.5</p>

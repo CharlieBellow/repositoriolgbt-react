@@ -10,7 +10,7 @@ function Header() {
 					src="../assets/repositorio lgbt/coluna.png"
 					alt="favicon"
 					className="header__logo"
-				></img>
+				/>
 				<nav className="header__nav">
 					<ul>
 						<li className="header__links">Home</li>
