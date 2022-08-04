@@ -1,22 +1,10 @@
-//import { useState, useEffect } from "react";
+import { useState } from "react";
 
-
-
-//import textDataBase from "../JS/textDataBase";
-//import searchByTitle from "../JS/searchByTitle.js";
-//import showText  from "../JS/showText.js";
-
-
-//import React, { useState } from "react";
-//import { Redirect } from "react-router-dom";
-//import Text from "../Text.js"; // página de texto
-//import searchByTitle from '../JS/searchByTitle.js'
 
 import {Autor}  from "../JS/Autor.js";
 import { Texto } from "../JS/Texto.js";
 
-//import BarraDeBusca from './BarraDeBusca.js'
-//import Botao from './Botao'
+
 import FormBusca from './FormBusca.js'
 /* Index ------------------------------------------------------------------------------------------------ */
 
@@ -149,80 +137,44 @@ const textoTransfeminismo = new Texto(
 	"transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero"
 );
 
-//const textDataBase = [];
-//// adicionando os textos criados dentro do array
-//textDataBase.push(
-//	textoTransformandoAUniversidade,
-//	textoSeraQueTemosDireito,
-//	textoUmEstudoEtnografico,
-//	textoAInvencaoDaHomossexualidade,
-//	textoUmProblemaDeGenero,
-//	textoAExperienciaDaCidade,
-//	textoAProstituicaoComo,
-//	textoAutobiografiasTrans,
-//	textoTransSexualidade,
-//	textoTransfeminismo
-//);
-//
 
 
+const textDataBase = [];
 
+textDataBase.push(
+	textoTransformandoAUniversidade,
+	textoSeraQueTemosDireito,
+	textoUmEstudoEtnografico,
+	textoAInvencaoDaHomossexualidade,
+	textoUmProblemaDeGenero,
+	textoAExperienciaDaCidade,
+	textoAProstituicaoComo,
+	textoAutobiografiasTrans,
+	textoTransSexualidade,
+	textoTransfeminismo
+);
 
-
-
-
-
-
+function searchByTitle(a, searchTerm) {
+	let newArray = [];
+	for (let i = 0; i < a.length; i++) {
+		if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
+			newArray.push(a[i]);
+		}
+	}
+	return newArray;
+}
 
 function Main() {
-//
-//  const [mostraTextos, useMostraTextos] = useState(showText(textDataBase));
-//
-//  const searchButton = (e) => {
-//    e.preventDefault();
-//
-//    const resultOfSearch = searchByTitle(textDataBase);
-//    
-//    
-//  }
-//	
-//  
-//  useEffect(() => {
-//    showText(searchButton);
-//
-//  })
-	
-	const textDataBase = [];
-	// adicionando os textos criados dentro do array
-	textDataBase.push(
-		textoTransformandoAUniversidade,
-		textoSeraQueTemosDireito,
-		textoUmEstudoEtnografico,
-		textoAInvencaoDaHomossexualidade,
-		textoUmProblemaDeGenero,
-		textoAExperienciaDaCidade,
-		textoAProstituicaoComo,
-		textoAutobiografiasTrans,
-		textoTransSexualidade,
-		textoTransfeminismo
-	);
+
+	const [list, setList] = useState(textDataBase)
+	const searchText = searchTerm => {
+		const query = searchByTitle(textDataBase, searchTerm);
+		setList(query)
+	};
 
 	
-	//function searchByTitle(a, searchTerm) {
-	//	let newArray = [];
-	//	for (let i = 0; i < a.length; i++) {
-	//		if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
-	//			newArray.push(a[i]);
-	//		} else if (a[i].descricao.toLowerCase().includes(searchTerm.toLowerCase())) {
-	//			newArray.push(a[i]);
-	//		} else if (a[i].categoria.toLowerCase().includes(searchTerm.toLowerCase())) {
-	//			newArray.push(a[i]);
-	//		}
-	//	}
-	//	return newArray;
-	//}
-	
-	//const [state,setState] = useState(false);
+
+
   let url="../Text";
 
 	return (
@@ -230,50 +182,13 @@ function Main() {
 			<main>
 				<section className="search content filter__flex">
 					<div className="search__text">
-						<FormBusca />
-						{/*<form
-							name="form"
-							className="search__toLookFor"
-							method="post"
-							action="#"
-						>*/}
-						{/* esse botão tem que transformar em componente pra poder pegar o que foi digitado na tela? */}
-						{/*<input
-								type="search"
-								name="busca"
-								list="pesquisa"
-								placeholder="faça sua busca aqui"
-								rows="500px"
-								size="60"
-								aria-label="Digite seu campo de busca"
-								className="search__searchBar"
-								value=""
-							/>*/}
-						{/*<BarraDeBusca />*/}
-						{/*<Botao />*/}
-						{/*<input
-								type="submit"
-								className="search__button"
-								value="Pesquisar"
-								onSubmit={searchByTitle(textDataBase, input.value)}
-							/>*/}
-						{/*<br></br>
-							<br></br>
-						</form>*/}
+						{/* as tag de componentes também são funções disfarçadas de tag, por isso, conseguimos passar parâmetros. esses parametros são recebidos nos elementos filhos para serem usados lá */}
+						<FormBusca searchText={searchText} />
 					</div>
 					<aside className="block content .filter__flex">
-						{/* textos */}
-						{/*<h3>
-							<a class="title" href="#">
-								{text.titulo}
-							</a>{" "}
-							<p class="icon">4.5</p>
-						</h3>
-						<p class="description">descricao</p> <br></br>*/}
-
+						<button onClick={() => searchText("trans")}>Limpar</button>
 						<div>
-							{textDataBase.map(text => (
-								// lembrar de colocar o key={item.id} pra ele identificar o elemento que ele tá trabalhando
+							{list.map(text => (
 								<>
 									<h3>
 										<a href={url} className="title">

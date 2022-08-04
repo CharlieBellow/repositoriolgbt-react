@@ -1,5 +1,4 @@
-//import BarraDeBusca from "./BarraDeBusca.js";
-//import Botao from "./Botao";
+
 import React from 'react'
 import TextDataBase from '../components/TextDataBase'
 
@@ -16,34 +15,9 @@ class FormBusca extends React.Component {
 		this.setState({ value: event.target.value });
 	}
 
-	searchByTitle(a, searchTerm) {
-	let newArray = [];
-	for (let i = 0; i < a.length; i++) {
-		if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
-			newArray.push(a[i]);
-		}
-	}
-	return newArray;
-}
 
   handleSubmit(event) {
-    //colocar a função de pesquisar pelo título aqui
-		let newArray = [];
-		for (let i = 0; i < TextDataBase.length; i++) {
-			if (
-				TextDataBase[i].titulo
-					.toLowerCase()
-					.includes(this.state.value.toLowerCase())
-			) {
-				newArray.push(TextDataBase[i]);
-			}
-		}
-		return newArray;
-
-//		searchByTitle(TextDataBase, this.state.value);
-//		alert("Um nome foi enviado: " + this.state.value);
-//		event.preventDefault();
-
+		this.props.searchText(this.state.value)
 		
 	}
 
@@ -51,29 +25,34 @@ class FormBusca extends React.Component {
 
 	render() {
 		return (
-			<form
-				name="form"
-				className="search__toLookFor"
-				method="post"
-				action="#"
-				onSubmit={this.handleSubmit}
-			>
-					<input
-						type="text"
-						name="busca"
-						list="pesquisa"
-						placeholder="faça sua busca aqui"
-						rows="500px"
-						size="60"
-						aria-label="Digite seu campo de busca"
-						className="search__searchBar"
-						value={this.state.value}
-						onChange={this.handleChange}
-					/>
-				<input type="submit" className="search__button" value="Pesquisar" />
-			</form>
+			<div name="form" className="search__toLookFor">
+				<input
+					type="text"
+					placeholder="faça sua busca aqui"
+					rows="500px"
+					size="60"
+					aria-label="Digite seu campo de busca"
+					className="search__searchBar"
+					value={this.state.value}
+					onChange={this.handleChange}
+				/>
+				<button
+					className="search__button"
+					onClick={this.handleSubmit}
+				>
+					Pesquisar
+				</button>
+			</div>
 		);
 	}
 }
 
 export default FormBusca;
+
+
+// filtro:
+
+//criar uma div e colocar os check dentro. e criar um estado
+// lista de objeto, valor e booleano
+// fazer as check respeitar o estado e alterar o estado.
+// ao clicar precisa mudar o valor.

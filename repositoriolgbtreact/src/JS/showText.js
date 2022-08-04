@@ -1,4 +1,3 @@
-//import Text from "../Text.js";
 
 export function showText(array) {
 	// tentativa de verificar se existe div dentro do aside, se tiver ele apaga enquanto existir. se não tiver ele executa o código da função que mostra o texto

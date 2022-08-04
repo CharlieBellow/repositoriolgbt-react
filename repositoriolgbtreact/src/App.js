@@ -16,8 +16,7 @@ import Header from "./components/Header.js"
 import Filter from './components/Filter.js'
 import Main from './components/Main.js'
 import Footer from './components/Footer.js'
-//import Text from "./components/Text";
-//import TextDataBase from './components/TextDataBase.js'
+
 
 
 function App() {
@@ -25,21 +24,19 @@ function App() {
     <div className="App">
       {/* colocar o código HTML da página aqui.. */}
 
-        <Header />
-        <Filter />
+      <Header />
+      <Filter />
       <Main />
-      {/*<Text />*/}
-      {/*<TextDataBase/>*/}
+      
+
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 		  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-		  {/*<script src="./src/float.js"></script>*/}
-		  {/*<script src="./src/index.js" defer type="module"></script>*/}
+	
 
       <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
       <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
       
-    
-      {/*<script src="like_button.js"></script>*/}
+
       <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
       <Footer />
