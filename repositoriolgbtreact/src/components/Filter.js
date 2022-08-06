@@ -64,7 +64,7 @@ function Filter() {
 					<h3 className="h3">Filtro:</h3>
 					<div>
 						{listChecks.map(checks => (
-							<>
+							<div>
 								<input
 									className="checkbox"
 									type="checkbox"
@@ -74,9 +74,7 @@ function Filter() {
 									
 								/>
 								<label htmlFor={checks.name}>{checks.name}</label>
-								<br></br>
-								{/* depois trocar essa quebra de linha para display flex no css */}
-							</>
+							</div>
 						))}
 					</div>
 				</div>
