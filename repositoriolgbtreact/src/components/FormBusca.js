@@ -1,6 +1,6 @@
 
 import React from 'react'
-import TextDataBase from '../components/TextDataBase'
+//import TextDataBase from '../components/TextDataBase'
 
 class FormBusca extends React.Component {
 	constructor(props) {
@@ -50,9 +50,3 @@ class FormBusca extends React.Component {
 export default FormBusca;
 
 
-// filtro:
-
-//criar uma div e colocar os check dentro. e criar um estado
-// lista de objeto, valor e booleano
-// fazer as check respeitar o estado e alterar o estado.
-// ao clicar precisa mudar o valor.
