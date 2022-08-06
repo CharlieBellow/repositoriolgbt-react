@@ -10,11 +10,11 @@ function Filter() {
 
 	const checkboxes = [
 		{ name: "lesbica", check: false },
-		{ name: "gay", check: true },
+		{ name: "gay", check: false },
 		{ name: "bissexualidade", check: false },
 		{ name: "travestis", check: false },
 		{ name: "transexuais", check: false },
-		{ name: "pessoas trans", check: true },
+		{ name: "pessoas trans", check: false },
 		{ name: "pansexualidade", check: false },
 		{ name: "artigos", check: false },
 		{ name: "dissertacoes", check: false },
@@ -27,10 +27,28 @@ function Filter() {
 
 	const [listChecks, setListChecks] = useState(checkboxes)
 
-	function handleChange(event) {
+	function handleClick(event) {
 		event.preventDefault()
-		//setState({ check: true })
-		console.log("clicou " + event.target.checked);
+
+	
+		
+		for (let i = 0; i < checkboxes.length; i++) {
+			if (event.target.name === checkboxes[i].name) {
+				if (event.target.checked === true) {
+					checkboxes[i].check = true
+					console.log('nome: ' + checkboxes[i].name + ", cheked " + checkboxes[i].check);
+				
+				} else if (event.target.checked === true) {
+					checkboxes[i].check = false;
+					console.log('nome: ' + checkboxes[i].name + ", cheked " + checkboxes[i].check);
+
+					
+				}
+				}
+				
+		}
+		setListChecks(checkboxes)
+
 		
 	}
 
@@ -51,12 +69,9 @@ function Filter() {
 									className="checkbox"
 									type="checkbox"
 									name={checks.name}
-									//value={this.state.name}
 									id={checks.name}
-									//defaultChecked={true}
-									//ref={this.input}
-									//onClick={checkCheckBoxes}
-									onChange={handleChange}
+									onClick={handleClick}
+									
 								/>
 								<label htmlFor={checks.name}>{checks.name}</label>
 								<br></br>
