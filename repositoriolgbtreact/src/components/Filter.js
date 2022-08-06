@@ -8,18 +8,32 @@ function Filter() {
 	// fazer as check respeitar o estado e alterar o estado.
 	// ao clicar precisa mudar o valor.
 
-	const checkBoxList = [{valor: this.target.checked, check: false}]
+	const checkboxes = [
+		{ name: "lesbica", check: false },
+		{ name: "gay", check: true },
+		{ name: "bissexualidade", check: false },
+		{ name: "travestis", check: false },
+		{ name: "transexuais", check: false },
+		{ name: "pessoas trans", check: true },
+		{ name: "pansexualidade", check: false },
+		{ name: "artigos", check: false },
+		{ name: "dissertacoes", check: false },
+		{ name: "escritos por trans", check: false },
+		{ name: "escrito por LGBT", check: false },
+		{ name: "assexualidade", check: false },
+		{ name: "gênero", check: false },
+		{ name: "lgbtfobia", check: false },
+	];
 
-	const [filterCheckbox, setFilterCheckbox] = useState(checkBoxList);
-	
+	const [listChecks, setListChecks] = useState(checkboxes)
+
 	function handleChange(event) {
-		this.setState({value: event.target.value, check: true})
+		event.preventDefault()
+		//setState({ check: true })
+		console.log("clicou " + event.target.checked);
+		
 	}
 
-	function handleSubmit() {
-		setFilterCheckbox({ check: true })
-		console.log('clicou');
-	}
 
 
 	return (
@@ -30,138 +44,26 @@ function Filter() {
 				</div>
 				<div name="filtro" className="filter__form">
 					<h3 className="h3">Filtro:</h3>
-					{filterCheckbox.map(() => (
-						<div key={this.target.name}>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="lesbica"
-								value={this.state.name}
-								id="lesbica"
-								onChange={handleChange}
-								onClick={handleSubmit}
-							/>
-							<label htmlFor="lesbica">lésbica</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="gay"
-								id="gay"
-								value="gay"
-							/>
-							<label htmlFor="gay">gay</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="bissexualidade"
-								id="bissexualidade"
-								value="bissexualidade"
-							/>
-							<label htmlFor="bissexualidade">bissexualidade</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="travestis"
-								id="travestis"
-								value="travestis"
-							/>
-							<label htmlFor="travestis">travestis</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="transexuais"
-								id="transexuais"
-								value="transexuais"
-							/>
-							<label htmlFor="transexuais">transexuais</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="pessoasTrans"
-								id="pessoas trans"
-								value="pessoas trans"
-							/>
-							<label htmlFor="pessoas trans">pessoas trans</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="pansexualidade"
-								id="pansexualidade"
-								value="pansexualidade"
-							/>
-							<label htmlFor="pansexualidade">pansexualidade</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="artigos"
-								id="artigos"
-								value="artigos"
-							/>
-							<label htmlFor="artigos">artigos</label>
-							<br></br>
-							<input
-								type="checkbox"
-								name="dissertacoes"
-								id="dissertacoes"
-								value="dissertacoes"
-							/>
-							<label htmlFor="dissertacoes">dissertações</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="escritosPorTrans"
-								id="escritosPorTrans"
-								value="escritosPorTrans"
-							/>
-							<label htmlFor="escritosPorTrans">
-								escritos por pessoas trans
-							</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="escritoPorLGBT"
-								id="escritoPorLGBT"
-								value="escritoPorLGBT"
-							/>
-							<label htmlFor="escritoPorLGBT">escritos por pessoas LGBT</label>
-							<br></br>
-							<input
-								type="checkbox"
-								name="assexualidade"
-								id="assexualidade"
-								value="assexualidade"
-							/>
-							<label htmlFor="assexualidade">assexualidade</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="diversidade"
-								id="diversidade"
-								value="diversidade"
-							/>
-							<label htmlFor="diversidade">diversidade</label>
-							<br></br>
-							<input
-								className="checkbox"
-								type="checkbox"
-								name="lgbtfobia"
-								id="lgbtfobia"
-								value="lgbtfobia"
-							/>
-							<label htmlFor="lgbtfobia">lgbtfobia </label>
-							<br></br>
-						</div>
-					))}
+					<div>
+						{listChecks.map(checks => (
+							<>
+								<input
+									className="checkbox"
+									type="checkbox"
+									name={checks.name}
+									//value={this.state.name}
+									id={checks.name}
+									//defaultChecked={true}
+									//ref={this.input}
+									//onClick={checkCheckBoxes}
+									onChange={handleChange}
+								/>
+								<label htmlFor={checks.name}>{checks.name}</label>
+								<br></br>
+								{/* depois trocar essa quebra de linha para display flex no css */}
+							</>
+						))}
+					</div>
 				</div>
 			</div>
 		</>
