@@ -34,15 +34,25 @@ function Filter() {
 		
 		for (let i = 0; i < checkboxes.length; i++) {
 			if (event.target.name === checkboxes[i].name) {
-				if (event.target.checked === true) {
-					checkboxes[i].check = true
-					console.log('nome: ' + checkboxes[i].name + ", cheked " + checkboxes[i].check);
+				if (checkboxes[i].check === false) {
+					checkboxes[i].check = true;
+					// adicionar o atributo checked para o componente
 				
-				} else if (event.target.checked === true) {
-					checkboxes[i].check = false;
-					console.log('nome: ' + checkboxes[i].name + ", cheked " + checkboxes[i].check);
-
+					//event.target.setAttribute('checked', 'checked')
 					
+				
+
+					console.log(
+						"nome: " +
+							checkboxes[i].name +
+							", cheked True: " +
+							checkboxes[i].check
+					);
+				} else if (checkboxes[i].check === true) {
+					checkboxes[i].check = false;
+					console.log(
+						"nome: " + checkboxes[i].name + ", cheked false: " + checkboxes[i].check
+					);
 				}
 				}
 				
@@ -71,7 +81,8 @@ function Filter() {
 									name={checks.name}
 									id={checks.name}
 									onClick={handleClick}
-									
+									//checked={this.isTrue}
+									//defaultChecked
 								/>
 								<label htmlFor={checks.name}>{checks.name}</label>
 							</div>
