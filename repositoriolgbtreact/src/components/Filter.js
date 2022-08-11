@@ -1,5 +1,23 @@
 import {useState} from 'react'
 
+const initialCheckboxes = [
+	{ name: "lesbica", check: false },
+	{ name: "gay", check: false },
+	{ name: "bissexualidade", check: true },
+	{ name: "travestis", check: false },
+	{ name: "transexuais", check: false },
+	{ name: "pessoas trans", check: true },
+	{ name: "pansexualidade", check: false },
+	{ name: "artigos", check: false },
+	{ name: "dissertacoes", check: false },
+	{ name: "escritos por trans", check: true },
+	{ name: "escrito por LGBT", check: false },
+	{ name: "assexualidade", check: false },
+	{ name: "gênero", check: false },
+	{ name: "lgbtfobia", check: false },
+];
+
+
 function Filter() {
 	// filtro:
 
@@ -8,61 +26,50 @@ function Filter() {
 	// fazer as check respeitar o estado e alterar o estado.
 	// ao clicar precisa mudar o valor.
 
-	const checkboxes = [
-		{ name: "lesbica", check: false },
-		{ name: "gay", check: false },
-		{ name: "bissexualidade", check: false },
-		{ name: "travestis", check: false },
-		{ name: "transexuais", check: false },
-		{ name: "pessoas trans", check: false },
-		{ name: "pansexualidade", check: false },
-		{ name: "artigos", check: false },
-		{ name: "dissertacoes", check: false },
-		{ name: "escritos por trans", check: false },
-		{ name: "escrito por LGBT", check: false },
-		{ name: "assexualidade", check: false },
-		{ name: "gênero", check: false },
-		{ name: "lgbtfobia", check: false },
-	];
-
-	const [listChecks, setListChecks] = useState(checkboxes)
-
-	function handleClick(event) {
-		event.preventDefault()
+	// corrigir os erros
+	// fazer o filtro filtrar os textos
 
 	
+	const [listChecks, setListChecks] = useState(initialCheckboxes);
+
+
+	function handleClick(event) {
+		//event.preventDefault()
+
+		const temp = listChecks.slice()
+	
 		
-		for (let i = 0; i < checkboxes.length; i++) {
-			if (event.target.name === checkboxes[i].name) {
-				if (checkboxes[i].check === false) {
-					checkboxes[i].check = true;
+		for (let i = 0; i < temp.length; i++) {
+			if (event.target.name === temp[i].name) {
+				if (temp[i].check === false) {
+					temp[i].check = true;
 					// adicionar o atributo checked para o componente
-				
+
 					//event.target.setAttribute('checked', 'checked')
-					
-				
 
 					console.log(
 						"nome: " +
-							checkboxes[i].name +
+							temp[i].name +
 							", cheked True: " +
-							checkboxes[i].check
+							temp[i].check
 					);
-				} else if (checkboxes[i].check === true) {
-					checkboxes[i].check = false;
+				} else if (temp[i].check === true) {
+					temp[i].check = false;
 					console.log(
-						"nome: " + checkboxes[i].name + ", cheked false: " + checkboxes[i].check
+						"nome: " +
+							temp[i].name +
+							", cheked false: " +
+							temp[i].check
 					);
 				}
-				}
-				
+			}
 		}
-		setListChecks(checkboxes)
+		setListChecks(temp)
 
 		
 	}
 
-
+console.log(listChecks);
 
 	return (
 		<>
@@ -73,18 +80,19 @@ function Filter() {
 				<div name="filtro" className="filter__form">
 					<h3 className="h3">Filtro:</h3>
 					<div>
-						{listChecks.map(checks => (
-							<div>
+						{listChecks.map(checkbox => (
+							// sempre que dá um map nas listas é importante colocar a key pra o React saber qual é o elemento que vai mudar
+							<div key={checkbox.name}>
 								<input
 									className="checkbox"
 									type="checkbox"
-									name={checks.name}
-									id={checks.name}
-									onClick={handleClick}
-									//checked={this.isTrue}
+									name={checkbox.name}
+									id={checkbox.name}
+									onChange={handleClick}
+									checked={checkbox.check}
 									//defaultChecked
 								/>
-								<label htmlFor={checks.name}>{checks.name}</label>
+								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>
 						))}
 					</div>

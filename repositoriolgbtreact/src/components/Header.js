@@ -1,8 +1,9 @@
-import Sobre from '../Sobre.js'
+
 
 
 
 function Header() {
+
   return (
 		<>
 			<header className="header">
@@ -16,7 +17,7 @@ function Header() {
 						<li className="header__links">Home</li>
 						<li className="header__links">Contato</li>
 						<li className="header__links">
-							<a href={Sobre}>Sobre</a>
+							<a href="/#">Sobre</a>
 						</li>
 						<li className="header__links">Contribua</li>
 						<li className="header__links">Ajuda</li>

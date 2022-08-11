@@ -177,7 +177,7 @@ function Main() {
 	
 
 
-  let url="../Text";
+  const url="../Text";
 
 	return (
 		<>
@@ -191,15 +191,17 @@ function Main() {
 						<button onClick={() => searchText("trans")}>Limpar</button>
 						<div>
 							{list.map(text => (
-								<>
-									<h3>
-										<a href={url} className="title">
+								<div key={text.titulo}>
+									<h3 >
+										<a
+											href={url}
+											className="title">
 											{text.titulo}
-										</a>{" "}
+										</a>
 										<p className="icon">4.5</p>
 									</h3>
 									<p className="description">{text.descricao}</p> <br></br>
-								</>
+								</div>
 							))}
 						</div>
 					</aside>
