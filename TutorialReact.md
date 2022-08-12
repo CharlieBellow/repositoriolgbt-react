@@ -27,6 +27,11 @@ e já pode executar o projeto
 
 $ npm start
 
+OBS.: se abrir em outro pc e der erro executa:
+$ npm i react-scripts 
+
+e roda novamente o npm start
+
 vai abrir uma aba do navegador com o projeto criado funcionando.
 
 3: entendendo a arquitetura do projeto...
