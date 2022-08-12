@@ -13,7 +13,7 @@ import "./Styles/text.css";
 
 // Importando os componentes
 import Header from "./components/Header.js"
-import Filter from './components/Filter.js'
+//import Filter from './components/Filter.js'
 import Main from './components/Main.js'
 import Footer from './components/Footer.js'
 
@@ -27,7 +27,7 @@ function App() {
       {/* colocar o código HTML da página aqui.. */}
 
       <Header />
-      <Filter />
+      {/*<Filter />*/}
       <Main />
       
 

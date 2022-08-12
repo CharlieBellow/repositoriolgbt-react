@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Filter from "./Filter.js";
 
 
 import {Autor}  from "../JS/Autor.js";
@@ -154,6 +155,7 @@ textDataBase.push(
 	textoTransfeminismo
 );
 
+
 function searchByTitle(a, searchTerm) {
 	let newArray = [];
 	for (let i = 0; i < a.length; i++) {
@@ -182,20 +184,23 @@ function Main() {
 	return (
 		<>
 			<main>
+				<Filter
+					searchText={searchText}
+					textDataBase={textDataBase}
+					searchByTitle={searchByTitle}
+				/>
 				<section className="search content filter__flex">
 					<div className="search__text">
 						{/* as tag de componentes também são funções disfarçadas de tag, por isso, conseguimos passar parâmetros. esses parametros são recebidos nos elementos filhos para serem usados lá */}
 						<FormBusca searchText={searchText} />
 					</div>
 					<aside className="block content .filter__flex">
-						<button onClick={() => searchText("trans")}>Limpar</button>
+						<button onClick={() => searchText("gênero")}>Limpar</button>
 						<div>
 							{list.map(text => (
 								<div key={text.titulo}>
-									<h3 >
-										<a
-											href={url}
-											className="title">
+									<h3>
+										<a href={url} className="title">
 											{text.titulo}
 										</a>
 										<p className="icon">4.5</p>
