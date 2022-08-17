@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import textDataBase from './Main'
 import searchText from './Main'
-import searchByTitle from './Main'
+//import searchByTitle from './Main'
 
 
 //import searchByTitle from './Main'
@@ -26,87 +26,51 @@ const initialCheckboxes = [
 
 
 function Filter() {
-	// filtro:
-
-	//criar uma div e colocar os check dentro. e criar um estado
-	// lista de objeto, valor e booleano
-	// fazer as check respeitar o estado e alterar o estado.
-	// ao clicar precisa mudar o valor.
-
-	// corrigir os erros
 	// fazer o filtro filtrar os textos
 
-	
+
+
 	const [listChecks, setListChecks] = useState(initialCheckboxes);
 
 	const [list, setList] = useState(textDataBase);
+	var dataInput;
+	// FUNÇÃO QUE IMPRIME O checkbox clicado NO CONSOLE QUANDO ele é true
+	function funcao() {
+		if (dataInput) {
+			console.log(dataInput);
+			//se tá marcado como true ele vai pesquisar, se não não pesquisa
+			searchText(dataInput);
+		}
+	}
+	//funcao()
 
 	function handleClick(event) {
-		
-		const temp = listChecks.slice()
+		const temp = listChecks.slice();
 		//const [filter, setFilter] = useState(textDataBase)
-		
-		
+
 		for (let i = 0; i < temp.length; i++) {
 			if (event.target.name === temp[i].name) {
 				if (temp[i].check === false) {
 					temp[i].check = true;
-					var dataInput = temp[i].name;
-					
-					
-				
+					dataInput = temp[i].name;
+
 					console.log(
-						"nome: " +
-							temp[i].name +
-							", cheked True: " +
-							temp[i].check
+						"nome: " + temp[i].name + ", cheked True: " + temp[i].check
 					);
 				} else if (temp[i].check === true) {
 					temp[i].check = false;
 					console.log(
-						"nome: " +
-							temp[i].name +
-							", cheked false: " +
-							temp[i].check
+						"nome: " + temp[i].name + ", cheked false: " + temp[i].check
 					);
 				}
 			}
 		}
-		
-		setListChecks(temp)
 
-		function searchByTitle(a, searchTerm) {
-			let newArray = [];
-			for (let i = 0; i < a.length; i++) {
-				if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
-					newArray.push(a[i]);
-				}
-			}
-			return newArray;
-		}
-		
-		// FUNÇÃO QUE IMPRIME O checkbox clicado NO CONSOLE QUANDO ele é true
-		function funcao() {
-			if (dataInput) {
-				console.log(dataInput);
-				//se tá marcado como true ele vai pesquisar, se não não pesquisa
-
-				
-			}
-			
-			const searchText = searchTerm => {
-				const query = searchByTitle(textDataBase, searchTerm);
-				setList(query);
-			};
-			searchText()
-	
-	
-		}
-		//funcao()
+		setListChecks(temp);
+		funcao();
 	}
-	
 
-//console.log(listChecks);
+	//console.log(listChecks);
 
 	return (
 		<>
@@ -129,9 +93,7 @@ function Filter() {
 									checked={checkbox.check}
 									//defaultChecked
 								/>
-								<label htmlFor={checkbox.name}>
-									{checkbox.name}
-								</label>
+								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>
 						))}
 					</div>

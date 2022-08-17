@@ -147,4 +147,4 @@ textDataBase.push(
 	textoTransfeminismo
 );
 
-//console.log(textDataBase);
+console.log(textDataBase);
