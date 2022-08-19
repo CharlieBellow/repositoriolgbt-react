@@ -182,8 +182,9 @@ function searchByTitle(a, searchTerm) {
 		};
 		
 		
-		const onCheckboxClick = (initialCheckbox) => {
+		function onCheckboxClick(initialCheckbox) {
 			const callFunction = filterByCheckbox(textDataBase, initialCheckbox);
+			console.log('clicou');
 			setList(callFunction);
 		}
 
@@ -199,7 +200,7 @@ function searchByTitle(a, searchTerm) {
 					searchText={searchText}
 					textDataBase={textDataBase}
 					searchByTitle={searchByTitle}
-					onCheckboxClick={onCheckboxClick}
+					onClick={onCheckboxClick}
 				/>
 				<section className="search content filter__flex">
 					<div className="search__text">

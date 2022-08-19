@@ -27,7 +27,7 @@ const initialCheckboxes = [
 
 
 function Filter() {
-	// fazer o filtro filtrar os textos
+
 
 
 
@@ -59,6 +59,11 @@ function Filter() {
 	
 	}
 
+	function onClickCheckBox() {
+		console.log('AQUI');
+		onCheckboxClick(listChecks);
+
+	}
 	//console.log(listChecks);
 
 	return (
@@ -80,8 +85,7 @@ function Filter() {
 									id={checkbox.name}
 									onChange={handleClick}
 									checked={checkbox.check}
-							
-									onCheckboxClick={onCheckboxClick(initialCheckboxes)}
+									onClick={() => onClickCheckBox}
 								/>
 								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>
