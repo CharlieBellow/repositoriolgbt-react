@@ -1,7 +1,8 @@
 
 import { useState } from 'react'
-import textDataBase from './Main'
-import searchText from './Main'
+//import textDataBase from './Main'
+//import searchText from './Main'
+import onCheckboxClick from './Main'
 //import searchByTitle from './Main'
 
 
@@ -32,27 +33,15 @@ function Filter() {
 
 	const [listChecks, setListChecks] = useState(initialCheckboxes);
 
-	const [list, setList] = useState(textDataBase);
-	var dataInput;
-	// FUNÇÃO QUE IMPRIME O checkbox clicado NO CONSOLE QUANDO ele é true
-	function funcao() {
-		if (dataInput) {
-			console.log(dataInput);
-			//se tá marcado como true ele vai pesquisar, se não não pesquisa
-			searchText(dataInput);
-		}
-	}
-	//funcao()
 
 	function handleClick(event) {
 		const temp = listChecks.slice();
-		//const [filter, setFilter] = useState(textDataBase)
+	
 
 		for (let i = 0; i < temp.length; i++) {
 			if (event.target.name === temp[i].name) {
 				if (temp[i].check === false) {
 					temp[i].check = true;
-					dataInput = temp[i].name;
 
 					console.log(
 						"nome: " + temp[i].name + ", cheked True: " + temp[i].check
@@ -67,7 +56,7 @@ function Filter() {
 		}
 
 		setListChecks(temp);
-		funcao();
+	
 	}
 
 	//console.log(listChecks);
@@ -91,7 +80,8 @@ function Filter() {
 									id={checkbox.name}
 									onChange={handleClick}
 									checked={checkbox.check}
-									//defaultChecked
+							
+									onCheckboxClick={onCheckboxClick(initialCheckboxes)}
 								/>
 								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>

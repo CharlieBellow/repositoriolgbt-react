@@ -7,6 +7,8 @@ import { Texto } from "../JS/Texto.js";
 
 
 import FormBusca from './FormBusca.js'
+
+import filterByCheckbox from "../JS/filterByCheckbox.js";
 /* Index ------------------------------------------------------------------------------------------------ */
 
 const scote = new Autor("Fausto", "Scote", "Ciências Sociais");
@@ -166,20 +168,29 @@ function searchByTitle(a, searchTerm) {
 	return newArray;
 }
 
-function Main() {
+// vai no main definir outra funcão onCheckboxClick(recebe lista de checkbox) vai rodar quando clicar na checkbox. vai usar a filterByCheckbox() recebe lista de box e retorna lista atualizada e chama o setstate()
+	// filtra as checkbox e set o estado
 
-	const [list, setList] = useState(textDataBase)
-	const searchText = searchTerm => {
-		const query = searchByTitle(textDataBase, searchTerm);
-		setList(query)
-	};
+
+
+	
+	function Main() {
+		const [list, setList] = useState(textDataBase);
+		const searchText = searchTerm => {
+			const query = searchByTitle(textDataBase, searchTerm);
+			setList(query);
+		};
+		
+		
+		const onCheckboxClick = (initialCheckbox) => {
+			const callFunction = filterByCheckbox(textDataBase, initialCheckbox);
+			setList(callFunction);
+		}
 
 	
 
-	
 
-
-  const url="../Text";
+	const url = "../Text";
 
 	return (
 		<>
@@ -188,6 +199,7 @@ function Main() {
 					searchText={searchText}
 					textDataBase={textDataBase}
 					searchByTitle={searchByTitle}
+					onCheckboxClick={onCheckboxClick}
 				/>
 				<section className="search content filter__flex">
 					<div className="search__text">
