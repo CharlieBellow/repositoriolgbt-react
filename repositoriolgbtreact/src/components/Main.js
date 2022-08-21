@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Filter from "./Filter.js";
 
 
@@ -9,6 +9,7 @@ import { Texto } from "../JS/Texto.js";
 import FormBusca from './FormBusca.js'
 
 import filterByCheckbox from "../JS/filterByCheckbox.js";
+
 /* Index ------------------------------------------------------------------------------------------------ */
 
 const scote = new Autor("Fausto", "Scote", "Ciências Sociais");
@@ -181,17 +182,29 @@ function searchByTitle(a, searchTerm) {
 			setList(query);
 		};
 		
-		
-		function onCheckboxClick(initialCheckbox) {
-			const callFunction = filterByCheckbox(textDataBase, initialCheckbox);
-			console.log('clicou');
-			setList(callFunction);
+		var callFunction = ''
+		const [filter, setFilter] = useState(textDataBase)
+		function onCheckboxClick(filteredCheckbox) {
+			console.log("entrou na OncheckboxClick");
+			callFunction = filterByCheckbox(textDataBase, filteredCheckbox);
+			//console.log(typeof callFunction);
+			//setList(setFilter(callFunction));
+			//setList(prevState => [...prevState, callFunction]);
+			return callFunction
 		}
-
+		
 	
 
 
 	const url = "../Text";
+
+		useEffect(() => {
+			setFilter((prevState => [...prevState, callFunction]));
+			// eslint-disable-next-line react-hooks/exhaustive-deps
+		}, [
+			//filter,
+			list
+		])
 
 	return (
 		<>
@@ -211,6 +224,17 @@ function searchByTitle(a, searchTerm) {
 						<button onClick={() => searchText("gênero")}>Limpar</button>
 						<div>
 							{list.map(text => (
+								<div key={text.titulo}>
+									<h3>
+										<a href={url} className="title">
+											{text.titulo}
+										</a>
+										<p className="icon">4.5</p>
+									</h3>
+									<p className="description">{text.descricao}</p> <br></br>
+								</div>
+							))}
+							{filter.map(text => (
 								<div key={text.titulo}>
 									<h3>
 										<a href={url} className="title">

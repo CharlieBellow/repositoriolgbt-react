@@ -60,11 +60,15 @@ function Filter() {
 	}
 
 	function onClickCheckBox() {
-		console.log('AQUI');
+		console.log('entrou na função onClickCheckbox');
+		
 		onCheckboxClick(listChecks);
-
+		
+		
+		console.log("terminou na função");
+	
 	}
-	//console.log(listChecks);
+
 
 	return (
 		<>
@@ -85,7 +89,7 @@ function Filter() {
 									id={checkbox.name}
 									onChange={handleClick}
 									checked={checkbox.check}
-									onClick={() => onClickCheckBox}
+									onClick={onClickCheckBox}
 								/>
 								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>

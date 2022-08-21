@@ -3,8 +3,9 @@
 
 
 
-let filteredList = [];
 function filterByCheckbox(list, checkbox) {
+	console.log("entrou na filterByCheckbox");
+	let filteredList = [];
 	for (let l = 0; l < list.length; l++) {
 		for (let c = 0; c < checkbox.length; c++) {
 			if (
@@ -32,7 +33,7 @@ function filterByCheckbox(list, checkbox) {
 			}
 		}
 	}
-
+  console.log(filteredList);
 	return filteredList;
 }
 
