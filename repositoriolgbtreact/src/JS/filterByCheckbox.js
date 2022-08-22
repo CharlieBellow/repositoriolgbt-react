@@ -1,19 +1,22 @@
+
+
 // respeitar estado?
 // funcao recebe lista de textos e checkbox retorna a lista de texto filtrada depedendo da checkbox criada filterByCheckbox (arquivo separado) retorna lista de texto
 
 
 
 function filterByCheckbox(list, checkbox) {
-	console.log("entrou na filterByCheckbox");
 	let filteredList = [];
+	console.log("entrou na filterByCheckbox");
+	console.log('filteredlist  '+ typeof filteredList);
 	for (let l = 0; l < list.length; l++) {
 		for (let c = 0; c < checkbox.length; c++) {
 			if (
 				list[l].titulo.toLowerCase().includes(checkbox[c].name.toLowerCase())
-			) {
-				if (!filteredList.includes(list[l].titulo)) {
-					filteredList.push(list[l].titulo);
-				}
+				) {
+					if (!filteredList.includes(list[l].titulo)) {
+						filteredList.push(list[l].titulo);
+					}
 			}
 
 			if (
@@ -33,7 +36,6 @@ function filterByCheckbox(list, checkbox) {
 			}
 		}
 	}
-  console.log(filteredList);
 	return filteredList;
 }
 

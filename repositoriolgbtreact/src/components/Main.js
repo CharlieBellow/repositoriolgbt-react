@@ -183,14 +183,17 @@ function searchByTitle(a, searchTerm) {
 		};
 		
 		var callFunction = ''
-		const [filter, setFilter] = useState(textDataBase)
+		//const [filter, setFilter] = useState(textDataBase)
 		function onCheckboxClick(filteredCheckbox) {
 			console.log("entrou na OncheckboxClick");
 			callFunction = filterByCheckbox(textDataBase, filteredCheckbox);
 			//console.log(typeof callFunction);
-			//setList(setFilter(callFunction));
-			//setList(prevState => [...prevState, callFunction]);
-			return callFunction
+			setList(callFunction);
+			//setList(callFunction);
+
+			setList(prevState => [...prevState, callFunction]);
+			console.log(typeof callFunction);
+			return callFunction;
 		}
 		
 	
@@ -199,7 +202,8 @@ function searchByTitle(a, searchTerm) {
 	const url = "../Text";
 
 		useEffect(() => {
-			setFilter((prevState => [...prevState, callFunction]));
+			onCheckboxClick(callFunction)
+			setList((prevState => [...prevState, callFunction]));
 			// eslint-disable-next-line react-hooks/exhaustive-deps
 		}, [
 			//filter,
@@ -234,7 +238,7 @@ function searchByTitle(a, searchTerm) {
 									<p className="description">{text.descricao}</p> <br></br>
 								</div>
 							))}
-							{filter.map(text => (
+							{/*{filter.map(text => (
 								<div key={text.titulo}>
 									<h3>
 										<a href={url} className="title">
@@ -244,7 +248,7 @@ function searchByTitle(a, searchTerm) {
 									</h3>
 									<p className="description">{text.descricao}</p> <br></br>
 								</div>
-							))}
+							))}*/}
 						</div>
 					</aside>
 
