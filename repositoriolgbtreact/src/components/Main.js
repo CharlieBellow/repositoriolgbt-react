@@ -62,7 +62,7 @@ const textoAInvencaoDaHomossexualidade = new Texto(
 	ceccarelli,
 	2015,
 	"artigo",
-	"homossexuais",
+	"gay",
 	"qualqer coisa",
 	"qualqer coisa",
 	"qualqer coisa",
@@ -185,7 +185,7 @@ function searchByTitle(a, searchTerm) {
 		
 		//const [filter, setFilter] = useState(textDataBase)
 		function onCheckboxClick(checkboxArray) {
-			console.log("entrou na OncheckboxClick");
+			//console.log("entrou na OncheckboxClick");
 			var filteredList = filterByCheckbox(textDataBase, checkboxArray);
 			//console.log(typeof callFunction);
 			setList(filteredList);

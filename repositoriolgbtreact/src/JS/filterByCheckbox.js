@@ -21,13 +21,8 @@ function filterByCheckbox(list, checkbox) {
 	if (checkFilt.length >= 2) {
 		var filteredList = [];
 		for (let arrayList = 0; arrayList < list.length; arrayList++) {
-			for (
-				let arrayCheckBoxes = 0;
-				arrayCheckBoxes < checkbox.length;
-				arrayCheckBoxes++
-			) {
-				if (
-					checkbox[arrayCheckBoxes].check === true &&
+			for (let arrayCheckBoxes = 0;arrayCheckBoxes < checkbox.length; arrayCheckBoxes++) {
+				if (checkbox[arrayCheckBoxes].check === true &&
 					(list[arrayList].titulo.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
 						list[arrayList].descricao.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
 						list[arrayList].categoria.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
@@ -37,11 +32,15 @@ function filterByCheckbox(list, checkbox) {
 				}
 			}
 		}
+
 		if (filteredList.length === 0) {
-			return "nenhum texto foi encontrado";
+			
+			return filteredList;
 		}
-		var myArray = [...new Set(filteredList)];
-		return myArray;
+			var myArray = [...new Set(filteredList)];
+		
+			return myArray;
+		
 	}
 }
 
