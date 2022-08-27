@@ -4,40 +4,81 @@
 // funcao recebe lista de textos e checkbox retorna a lista de texto filtrada depedendo da checkbox criada filterByCheckbox (arquivo separado) retorna lista de texto
 
 
-
 function filterByCheckbox(list, checkbox) {
-	let filteredList = [];
-	console.log("entrou na filterByCheckbox");
-	console.log('filteredlist  '+ typeof filteredList);
-	for (let l = 0; l < list.length; l++) {
-		for (let c = 0; c < checkbox.length; c++) {
-			if (
-				list[l].titulo.toLowerCase().includes(checkbox[c].name.toLowerCase())
+	var haveSomethingToFilter = [];
+	for (let i = 0; i < checkbox.length; i++) {
+		if (checkbox[i].check === false) {
+			haveSomethingToFilter.push(false);
+		}
+		if (checkbox[i].check === true) {
+			haveSomethingToFilter.push(true);
+		}
+	}
+	var checkFilt = [...new Set(haveSomethingToFilter)];
+	if (checkFilt.length === 1) {
+		return list;
+	}
+	if (checkFilt.length >= 2) {
+		var filteredList = [];
+		for (let arrayList = 0; arrayList < list.length; arrayList++) {
+			for (
+				let arrayCheckBoxes = 0;
+				arrayCheckBoxes < checkbox.length;
+				arrayCheckBoxes++
+			) {
+				if (
+					checkbox[arrayCheckBoxes].check === true &&
+					(list[arrayList].titulo.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
+						list[arrayList].descricao.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
+						list[arrayList].categoria.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()) ||
+						list[arrayList].tipo.toLowerCase().includes(checkbox[arrayCheckBoxes].name.toLowerCase()))
 				) {
-					if (!filteredList.includes(list[l].titulo)) {
-						filteredList.push(list[l]);
-					}
-			}
-
-			if (
-				list[l].descricao.toLowerCase().includes(checkbox[c].name.toLowerCase())
-			) {
-				if (!filteredList.includes(list[l].titulo)) {
-					filteredList.push(list[l]);
-				}
-			}
-
-			if (
-				list[l].categoria.toLowerCase().includes(checkbox[c].name.toLowerCase())
-			) {
-				if (!filteredList.includes(list[l].titulo)) {
-					filteredList.push(list[l]);
+					filteredList.push(list[arrayList]);
 				}
 			}
 		}
+		if (filteredList.length === 0) {
+			return "nenhum texto foi encontrado";
+		}
+		var myArray = [...new Set(filteredList)];
+		return myArray;
 	}
-	return filteredList;
 }
+
+
+//function filterByCheckbox(list, checkbox) {
+//	let filteredList = [];
+//	console.log("entrou na filterByCheckbox");
+//	console.log('filteredlist  '+ typeof filteredList);
+//	for (let l = 0; l < list.length; l++) {
+//		for (let c = 0; c < checkbox.length; c++) {
+//			if (
+//				list[l].titulo.toLowerCase().includes(checkbox[c].name.toLowerCase())
+//				) {
+//					if (!filteredList.includes(list[l].titulo)) {
+//						filteredList.push(list[l]);
+//					}
+//			}
+//
+//			if (
+//				list[l].descricao.toLowerCase().includes(checkbox[c].name.toLowerCase())
+//			) {
+//				if (!filteredList.includes(list[l].titulo)) {
+//					filteredList.push(list[l]);
+//				}
+//			}
+//
+//			if (
+//				list[l].categoria.toLowerCase().includes(checkbox[c].name.toLowerCase())
+//			) {
+//				if (!filteredList.includes(list[l].titulo)) {
+//					filteredList.push(list[l]);
+//				}
+//			}
+//		}
+//	}
+//	return filteredList;
+//}
 
 export default filterByCheckbox;
 

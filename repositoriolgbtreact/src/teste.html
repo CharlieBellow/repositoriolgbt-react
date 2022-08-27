@@ -183,7 +183,7 @@
         textoTransfeminismo
       );
 
-console.log(textDataBase);
+//console.log(textDataBase);
 
       const initialCheckboxes = [
           { name: "lesbica", check: false},
@@ -191,7 +191,7 @@ console.log(textDataBase);
           { name: "bissexualidade", check: false },
           { name: "travestis", check: false },
           { name: "transexuais", check: false}, // true: pega o texto um estudo etnografico que é sobre gay
-          { name: "trans", check: true }, 
+          { name: "trans", check: false }, 
           // true: pega o texto um estudo etnografico que é sobre gay. agora não pega mais, mas se deixar a checkbox como pessoas trans ele nao funciona, só funciona se colocar só trans
           { name: "pansexualidade", check: false },
           { name: "artigo", check: false },
@@ -199,7 +199,7 @@ console.log(textDataBase);
           { name: "escritos por trans", check: false },
           { name: "escrito por LGBT", check: false },
           { name: "assexualidade", check: false },
-          { name: "gênero", check: false }, //true
+          { name: "gênero", check: true }, //true
           { name: "lgbt", check: false },
           // se coloco todos true, ele pula o texto 8 trans sexualidade, mas se marco o check trans ele pega essa texto
         ];
@@ -223,44 +223,20 @@ console.log(textDataBase);
 
   
 function filterByCheckbox(list, checkbox) {
-  
-    //posso fazer primeiro um set na lista de checkboxes e pegar só o que vor true, se nao tiver nenhum true ele retorna a list, se tiver algum true ele entra na função.
-
-    // pegar a lista de checkboxes e tirar todos os duplicados,
-    
       var haveSomethingToFilter = []
-      var booleanChecks = []
-  
       for(let i = 0; i < checkbox.length; i++) {
         if(checkbox[i].check === false) {
           haveSomethingToFilter.push(false)
         }
-  
         if (checkbox[i].check === true) {
           haveSomethingToFilter.push(true)
-          booleanChecks.push(checkbox[i])
         }
       }
-      //console.log(haveSomethingToFilter);
-  
       var checkFilt = [...new Set(haveSomethingToFilter)]
-
-      console.log(checkFilt.length);
-      //console.log(booleanChecks);
-      
-      
       if (checkFilt.length == 1) {
-        console.log("retornou list");
-
-        console.log(list);
         return list
       }
-
       if (checkFilt.length >= 2) {
-        console.log("chamou");
-        console.log(booleanChecks);
-
-
         var filteredList = []
         for (let arrayList = 0; arrayList < list.length; arrayList++) {
           for (let arrayCheckBoxes = 0; arrayCheckBoxes < checkbox.length; arrayCheckBoxes++) {
@@ -268,69 +244,15 @@ function filterByCheckbox(list, checkbox) {
             (list[arrayList].titulo.includes(checkbox[arrayCheckBoxes].name) || list[arrayList].descricao.includes(checkbox[arrayCheckBoxes].name) || list[arrayList].categoria.includes(checkbox[arrayCheckBoxes].name) || list[arrayList].tipo.includes(checkbox[arrayCheckBoxes].name))
             ) {
               filteredList.push(list[arrayList]);
-
             }
           }
-          
         }
-
-        console.log(filteredList);
-
         if(filteredList.length == 0) {
-          return console.log("nenhum texto ");
+          return "nenhum texto foi encontrado";
         }
-        var meuArray = [...new Set(filteredList)]
-        return console.log(meuArray);
+        var myArray = [...new Set(filteredList)]
+        return myArray;
       }
-      
-      
-
-    // nesse caso, se o tamanho do array retornado for 1 quer dizer que: ou todos são true ou todos são false. aí em qualquer um dos casos ele vai retornar a mesma lista. (ou então se for false retorna a lista e se for tudo true chama a função)
-
-      
- //}
-
-  //filtraTexto(response)
-    // se o tamanho do array for diferente de 1 então tem lista alguns true e outros false, aí nesse caso ele chama a função pra filtrar.
-
-
-
-
-
-
-
-
-
-    // se só sobrar um, que dizer que estão todos falsos ou todos verdadeiros. 
-    // se estiver todos falsos, retorne a list 
-    // se tiver todos verdadeiros, chame a função pra ver no que dá ou retorna a lista também.
-
-    //nesse segundo caso, se eu tiver ue retornar a lista tanto para o true ou para o false, aí chamo a função como else dessas duas condições.
-
-    // outra opção: no caso, se o tamanho da lista for maior que um, chama a função pra filtrar (tem que ver primeiro no console.log se a lista de checkbox filtrada retorna mais de um elemento no array, caso eu deixe alguns como true e outros como false.)
-
-
-{
-//Filtrei o array removendo os duplicados.Se só sobrou um elemento, todos são iguais
-  
-
-              //else if(checkbox[arrayCheckBoxes].check === false) {
-                //console.log("list");
-                //return console.log(list);
-
-              //}
-
-            //} 
-            //else {
-              //console.log("entrou no else");
-              //return console.log(list)
-
-            //}
-        //}
-        
-        //console.log(filteredList);
-            } 
-        
 }
   filterByCheckbox(textDataBase, initialCheckboxes)
   </script>

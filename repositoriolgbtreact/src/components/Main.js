@@ -192,7 +192,7 @@ function searchByTitle(a, searchTerm) {
 			//setList(callFunction);
 
 			//setList(prevState => [...prevState, filteredList]);
-			console.log(typeof filteredList);
+		
 			//return filteredList;
 		}
 		

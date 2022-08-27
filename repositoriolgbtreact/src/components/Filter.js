@@ -11,14 +11,14 @@ import { useState } from 'react'
 const initialCheckboxes = [
 	{ name: "lesbica", check: false },
 	{ name: "gay", check: false },
-	{ name: "bissexualidade", check: true },
+	{ name: "bissexualidade", check: false },
 	{ name: "travestis", check: false },
 	{ name: "transexuais", check: false },
-	{ name: "pessoas trans", check: true },
+	{ name: "trans", check: false },
 	{ name: "pansexualidade", check: false },
 	{ name: "artigos", check: false },
 	{ name: "dissertacoes", check: false },
-	{ name: "escritos por trans", check: true },
+	{ name: "escritos por trans", check: false },
 	{ name: "escrito por LGBT", check: false },
 	{ name: "assexualidade", check: false },
 	{ name: "gênero", check: false },
@@ -27,9 +27,6 @@ const initialCheckboxes = [
 
 
 function Filter({onCheckboxClick}) {
-
-
-
 
 	const [listChecks, setListChecks] = useState(initialCheckboxes);
 
