@@ -1,16 +1,35 @@
-import { useState } from "react";
-import Filter from "./Filter.js";
+class Autor {
+	constructor(nome, sobrenome, formacao, publicacoes) {
+		this.nome = nome;
+		this.sobrenome = sobrenome;
+		this.formacao = formacao;
+		this.publicacoes = publicacoes;
+	}
+}
 
-
-import {Autor}  from "../JS/Autor.js";
-import { Texto } from "../JS/Texto.js";
-
-
-import FormBusca from './FormBusca.js'
-
-import filterByCheckbox from "../JS/filterByCheckbox.js";
-
-/* Index ------------------------------------------------------------------------------------------------ */
+class Texto {
+	constructor(
+		titulo,
+		autor,
+		ano,
+		tipo,
+		categoria,
+		link,
+		citacao,
+		avaliacao,
+		descricao
+	) {
+		this.titulo = titulo;
+		this.autor = autor;
+		this.ano = ano;
+		this.tipo = tipo;
+		this.categoria = categoria;
+		this.link = link;
+		this.citacao = citacao;
+		this.avaliacao = avaliacao;
+		this.descricao = descricao;
+	}
+}
 
 const scote = new Autor("Fausto", "Scote", "Ciências Sociais");
 const ceccarelli = new Autor("Paulo", "Ceccarelli", "Psicanalista");
@@ -141,8 +160,6 @@ const textoTransfeminismo = new Texto(
 	"transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero"
 );
 
-
-
 const textDataBase = [];
 
 textDataBase.push(
@@ -158,107 +175,61 @@ textDataBase.push(
 	textoTransfeminismo
 );
 
+const initialCheckboxes = [
+	{ name: "lesbica", check: false },
+	{ name: "gay", check: false },
+	{ name: "bissexualidade", check: false },
+	{ name: "travestis", check: false },
+	{ name: "transexuais", check: false },
+	{ name: "pessoas trans", check: false },
+	{ name: "pansexualidade", check: false },
+	{ name: "artigos", check: false },
+	{ name: "dissertacoes", check: false },
+	{ name: "escritos por trans", check: false },
+	{ name: "escrito por LGBT", check: false },
+	{ name: "assexualidade", check: false },
+	{ name: "gênero", check: false },
+	{ name: "lgbtfobia", check: false },
+];
+// revisar o estado
+// testar a função em várias situações: todas marcadas, todas desmarcadas, etc.. e debugar a função
 
-function searchByTitle(a, searchTerm) {
-	let newArray = [];
-	for (let i = 0; i < a.length; i++) {
-		if (a[i].titulo.toLowerCase().includes(searchTerm.toLowerCase())) {
-			newArray.push(a[i]);
+function filterByCheckbox(list, checkbox) {
+	let filteredList = [];
+	console.log("entrou na filterByCheckbox");
+	console.log("filteredlist  " + typeof filteredList);
+	for (let l = 0; l < list.length; l++) {
+		for (let c = 0; c < checkbox.length; c++) {
+			if (
+				list[l].titulo.toLowerCase().includes(checkbox[c].name.toLowerCase())
+			) {
+				if (!filteredList.includes(list[l].titulo)) {
+					filteredList.push(list[l]);
+				}
+			}
+
+			if (
+				list[l].descricao.toLowerCase().includes(checkbox[c].name.toLowerCase())
+			) {
+				if (!filteredList.includes(list[l].titulo)) {
+					filteredList.push(list[l]);
+				}
+			}
+
+			if (
+				list[l].categoria.toLowerCase().includes(checkbox[c].name.toLowerCase())
+			) {
+				if (!filteredList.includes(list[l].titulo)) {
+					filteredList.push(list[l]);
+				}
+			}
 		}
 	}
-	return newArray;
+
+	console.log(filteredList);
+	console.log(filteredList.length);
+
+	return filteredList;
 }
 
-// vai no main definir outra funcão onCheckboxClick(recebe lista de checkbox) vai rodar quando clicar na checkbox. vai usar a filterByCheckbox() recebe lista de box e retorna lista atualizada e chama o setstate()
-	// filtra as checkbox e set o estado
-
-
-
-	
-	function Main() {
-		const [list, setList] = useState(textDataBase);
-		const searchText = searchTerm => {
-			const query = searchByTitle(textDataBase, searchTerm);
-			setList(query);
-		};
-		
-		
-		//const [filter, setFilter] = useState(textDataBase)
-		function onCheckboxClick(checkboxArray) {
-			console.log("entrou na OncheckboxClick");
-			var filteredList = filterByCheckbox(textDataBase, checkboxArray);
-			//console.log(typeof callFunction);
-			setList(filteredList);
-			//setList(callFunction);
-
-			//setList(prevState => [...prevState, filteredList]);
-			console.log(typeof filteredList);
-			//return filteredList;
-		}
-		
-	
-
-
-	const url = "../Text";
-
-		//useEffect(() => {
-		//	onCheckboxClick(callFunction)
-		//	setList((prevState => [...prevState, callFunction]));
-		//	// eslint-disable-next-line react-hooks/exhaustive-deps
-		//}, [
-		//	//filter,
-		//	list
-		//])
-
-	return (
-		<>
-			<main>
-				<Filter
-					onCheckboxClick={onCheckboxClick}
-				/>
-				<section className="search content filter__flex">
-					<div className="search__text">
-						{/* as tag de componentes também são funções disfarçadas de tag, por isso, conseguimos passar parâmetros. esses parametros são recebidos nos elementos filhos para serem usados lá */}
-						<FormBusca searchText={searchText} />
-					</div>
-					<aside className="block content .filter__flex">
-						<button onClick={() => searchText("gênero")}>Limpar</button>
-						<div>
-							{list.map(text => (
-								<div key={text.titulo}>
-									<h3>
-										<a href={url} className="title">
-											{text.titulo}
-										</a>
-										<p className="icon">4.5</p>
-									</h3>
-									<p className="description">{text.descricao}</p> <br></br>
-								</div>
-							))}
-							{/*{filter.map(text => (
-								<div key={text.titulo}>
-									<h3>
-										<a href={url} className="title">
-											{text.titulo}
-										</a>
-										<p className="icon">4.5</p>
-									</h3>
-									<p className="description">{text.descricao}</p> <br></br>
-								</div>
-							))}*/}
-						</div>
-					</aside>
-
-					<p>
-						tem algum texto que gostaria de incluir aqui? entre em contato
-						comigo nesse <a href="mailto:charliebftm@gmail.com">Email</a>
-					</p>
-
-					<div id="like_button_container"></div>
-				</section>
-			</main>
-		</>
-	);
-}
-export default Main;
-
+filterByCheckbox(textDataBase, initialCheckboxes);

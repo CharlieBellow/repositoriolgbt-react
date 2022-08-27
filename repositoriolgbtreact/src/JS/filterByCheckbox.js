@@ -15,7 +15,7 @@ function filterByCheckbox(list, checkbox) {
 				list[l].titulo.toLowerCase().includes(checkbox[c].name.toLowerCase())
 				) {
 					if (!filteredList.includes(list[l].titulo)) {
-						filteredList.push(list[l].titulo);
+						filteredList.push(list[l]);
 					}
 			}
 
@@ -23,7 +23,7 @@ function filterByCheckbox(list, checkbox) {
 				list[l].descricao.toLowerCase().includes(checkbox[c].name.toLowerCase())
 			) {
 				if (!filteredList.includes(list[l].titulo)) {
-					filteredList.push(list[l].titulo);
+					filteredList.push(list[l]);
 				}
 			}
 
@@ -31,7 +31,7 @@ function filterByCheckbox(list, checkbox) {
 				list[l].categoria.toLowerCase().includes(checkbox[c].name.toLowerCase())
 			) {
 				if (!filteredList.includes(list[l].titulo)) {
-					filteredList.push(list[l].titulo);
+					filteredList.push(list[l]);
 				}
 			}
 		}

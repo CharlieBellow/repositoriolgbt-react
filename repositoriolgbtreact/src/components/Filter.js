@@ -2,7 +2,7 @@
 import { useState } from 'react'
 //import textDataBase from './Main'
 //import searchText from './Main'
-import onCheckboxClick from './Main'
+//import onCheckboxClick from './Main'
 //import searchByTitle from './Main'
 
 
@@ -26,7 +26,7 @@ const initialCheckboxes = [
 ];
 
 
-function Filter() {
+function Filter({onCheckboxClick}) {
 
 
 
@@ -59,15 +59,15 @@ function Filter() {
 	
 	}
 
-	function onClickCheckBox() {
-		console.log('entrou na função onClickCheckbox');
-		
-		onCheckboxClick(listChecks);
-		
-		
-		console.log("terminou na função");
-	
-	}
+	//function onClick() {
+	//	console.log('entrou na função onClickCheckbox');
+	//	
+	//	onCheckboxClick(listChecks);
+	//	
+	//	
+	//	console.log("terminou na função");
+	//
+	//}
 
 
 	return (
@@ -89,7 +89,7 @@ function Filter() {
 									id={checkbox.name}
 									onChange={handleClick}
 									checked={checkbox.check}
-									onClick={onClickCheckBox}
+									onClick={() => onCheckboxClick(listChecks)}
 								/>
 								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>
