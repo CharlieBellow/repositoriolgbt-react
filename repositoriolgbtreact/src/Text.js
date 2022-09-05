@@ -8,7 +8,6 @@ function Text() {
 		<>
 			<Header />
 			<Filter />
-      {/*<Main />*/}
       <Footer/>
 		</>
 	);

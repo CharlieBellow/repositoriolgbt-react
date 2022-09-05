@@ -1,4 +1,4 @@
-// importando os arquivos CSS
+
 import './App.css';
 import './Styles/reset.css'
 import './Styles/header.css';
@@ -11,9 +11,8 @@ import "./Styles/footer.css";
 import "./Styles/searchBar.css";
 import "./Styles/text.css";
 
-// Importando os componentes
+
 import Header from "./components/Header.js"
-//import Filter from './components/Filter.js'
 import Main from './components/Main.js'
 import Footer from './components/Footer.js'
 
@@ -24,10 +23,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* colocar o código HTML da página aqui.. */}
 
       <Header />
-      {/*<Filter />*/}
       <Main />
       
 

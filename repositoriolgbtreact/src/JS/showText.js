@@ -1,8 +1,6 @@
 
 export function showText(array) {
-	// tentativa de verificar se existe div dentro do aside, se tiver ele apaga enquanto existir. se não tiver ele executa o código da função que mostra o texto
-
-	// atualizar a tela quando pesquisar e chamar a função que adiciona os títulos filtrados.
+	
 	if (document.querySelector(".block").querySelector("div")) {
 		while (document.querySelector(".block").querySelector("div")) {
 			document

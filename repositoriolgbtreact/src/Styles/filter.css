@@ -1,45 +1,45 @@
 /* FILTRO --------------------------- */
 /* inutilizado -- colocar no gitIgnore esse e todos os css que não estou usando */
 
-.float__btn{
+/*.float__btn{
 	position: fixed;
 	left: -2px;
 	
   content: "\300B";
   visibility: visible;
-}
-
+}*/
+/*
   .btnCircular{
     border-radius: 0px 100px 100px 0px;
     content: "\300B"
-  }
-
+  }*/
+/*
   .btnPrincipal{
     font-size: 20px;
     background-color: var(--light-purple);
     height: 65vh;
     content: "\300B"
-  }
-
+  }*/
+/*
   .header__menu div:first-child {
     height: 21%;
-  }
+  }*/
 
-  .fa {
+  /*.fa {
     content: "\300B"
-  }
+  }*/
 
 
 /* fixar o filtro na tela */
-.filter__ret--purple {
+/*.filter__ret--purple {
   position: fixed;
 
-  opacity: 0; 
+  opacity: 1; 
 }
 
 /* active */
 
-  .filter__ret--purple.active {
+  /*.filter__ret--purple.active {
     opacity: 1;
       width: auto;
       height: 65vh;
@@ -48,7 +48,7 @@
 
       
       
-  }
+  }*/
 
   .filter__form.active{
 

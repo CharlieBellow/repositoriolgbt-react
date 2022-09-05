@@ -1,6 +1,5 @@
 
 import React from 'react'
-//import TextDataBase from '../components/TextDataBase'
 
 class FormBusca extends React.Component {
 	constructor(props) {

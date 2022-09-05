@@ -33,7 +33,7 @@ export function searchByCategory(a, searchTerm) {
 	return newArray;
 }
 
-// ainda não tá pronta
+
 export function searchByCheckbox(a, checkbox) {
 	let newArray = [];
 	for (let i = 0; i < a.length; i++) {

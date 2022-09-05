@@ -1,9 +1,3 @@
-
-
-// respeitar estado?
-// funcao recebe lista de textos e checkbox retorna a lista de texto filtrada depedendo da checkbox criada filterByCheckbox (arquivo separado) retorna lista de texto
-
-
 function filterByCheckbox(list, checkbox) {
 	var haveSomethingToFilter = [];
 	for (let i = 0; i < checkbox.length; i++) {

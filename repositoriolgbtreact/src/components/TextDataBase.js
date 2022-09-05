@@ -1,12 +1,10 @@
 import { Autor } from "../JS/Autor";
 import { Texto } from "../JS/Texto";
 
-/* Index ------------------------------------------------------------------------------------------------ */
 
 const scote = new Autor("Fausto", "Scote", "Ciências Sociais");
 const ceccarelli = new Autor("Paulo", "Ceccarelli", "Psicanalista");
-const moira = new Autor("Amara", "Moira", "filosofa");
-//const jesus = new Autor("Jaqueline", "Jesus", "filosofa");
+const moira = new Autor("Amara", "Moira", "filosofa");;
 const vergueiro = new Autor("Viviane", "Vergueiro", "filosofa");
 const vieira = new Autor("Helena", "Vieira", "filosofa");
 
@@ -131,29 +129,12 @@ const textoTransfeminismo = new Texto(
 	"qualqer coisa",
 	"transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero. transfeminismo, um tema necessário dentro dos estudos de gênero"
 );
-//
-//const textDataBase = [];
-//// adicionando os textos criados dentro do array
-//textDataBase.push(
-//	textoTransformandoAUniversidade,
-//	textoSeraQueTemosDireito,
-//	textoUmEstudoEtnografico,
-//	textoAInvencaoDaHomossexualidade,
-//	textoUmProblemaDeGenero,
-//	textoAExperienciaDaCidade,
-//	textoAProstituicaoComo,
-//	textoAutobiografiasTrans,
-//	textoTransSexualidade,
-//	textoTransfeminismo
-//);
 
-//console.log(textDataBase);
 
 
 const TextDataBase = () => {
 	
 	const textDataBase = [];
-	// adicionando os textos criados dentro do array
 	textDataBase.push(
 		textoTransformandoAUniversidade,
 		textoSeraQueTemosDireito,
@@ -172,7 +153,6 @@ const TextDataBase = () => {
 	return (
 		<div>
 			{TextDataBase.map(textDataBase => (
-				// lembrar de colocar o key={item.id} pra ele identificar o elemento que ele tá trabalhando
 				<>
 					<h3>
 						<a class="title" href={Text}>
