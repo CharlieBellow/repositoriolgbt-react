@@ -1,12 +1,6 @@
 
 import { useState } from 'react'
-//import textDataBase from './Main'
-//import searchText from './Main'
-//import onCheckboxClick from './Main'
-//import searchByTitle from './Main'
 
-
-//import searchByTitle from './Main'
 
 const initialCheckboxes = [
 	{ name: "lesbica", check: false },
@@ -30,33 +24,38 @@ function Filter({onCheckboxClick}) {
 
 	const [listChecks, setListChecks] = useState(initialCheckboxes);
 
-
+// colocar no github pages
+	// descobrir o que vou fazer da vida nos projetos
 	function handleClick(event) {
-		const temp = listChecks.slice();
+		const temp = listChecks.slice(); //cópia da lista para atualizar
+
+		//.map?
+	  const updatedCheckboxes = listChecks.map((checkbox) => checkbox.name === event.target.name ? {...checkbox, check:  !checkbox.check} : {...checkbox} )
 	
 
 		for (let i = 0; i < temp.length; i++) {
 			if (event.target.name === temp[i].name) {
 				if (temp[i].check === false) {
 					temp[i].check = true;
-
+					
 					console.log(
 						"nome: " + temp[i].name + ", cheked True: " + temp[i].check
-					);
-				} else if (temp[i].check === true) {
-					temp[i].check = false;
-					console.log(
-						"nome: " + temp[i].name + ", cheked false: " + temp[i].check
-					);
+						);
+					} else if (temp[i].check === true) {
+						temp[i].check = false;
+						console.log(
+							"nome: " + temp[i].name + ", cheked false: " + temp[i].check
+							);
+						}
+					}
 				}
+				
+				setListChecks(temp);
+				onCheckboxClick(temp);
+				
 			}
-		}
 
-		setListChecks(temp);
-	
-	}
-
-	//function onClick() {
+	//onClick() {
 	//	console.log('entrou na função onClickCheckbox');
 	//	
 	//	onCheckboxClick(listChecks);
@@ -86,7 +85,7 @@ function Filter({onCheckboxClick}) {
 									id={checkbox.name}
 									onChange={handleClick}
 									checked={checkbox.check}
-									onClick={() => onCheckboxClick(listChecks)}
+									
 								/>
 								<label htmlFor={checkbox.name}>{checkbox.name}</label>
 							</div>
