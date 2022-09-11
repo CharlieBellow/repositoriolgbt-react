@@ -1,0 +1,127 @@
+/* FILTRO --------------------------- */
+/* fixar o filtro na tela */
+.filter__ret--purple {
+
+  position: fixed;
+  display: flex;
+  align-items: center;
+  /* alinha o icone de novo no centro */
+  justify-content: center;
+  flex-direction: row-reverse;
+  width: auto;
+  
+
+  border-radius: 0px 100px 100px 0px;
+  
+  background: var(--light-purple);
+  
+  text-align: justify;
+  font-size: 16px;
+  padding: 5px 0;
+
+  
+
+  max-height: 70vh;
+  transition: 0.5s;
+  
+
+  
+}
+
+.ion-icon {
+  /*position: fixed;*/
+  opacity: 2;
+  color: green;
+  width: 500px;
+  
+}
+
+/*.ion-icon.active {*/
+  /* fazer aquele lance das setinhas mudarem de direção */
+  /*opacity: 0;*/
+  /*content: "\2039";*/
+  /*opacity: 0;*/
+  
+/*}*/
+
+
+
+/* active */
+  .filter__ret--purple.active {
+      margin-left: 0;
+      width: auto;
+
+    /* alinha o icone de novo na borda */
+    justify-content: space-between;
+  }
+
+
+
+  .filter__form{
+    padding: 0 2em;
+    opacity: 1;
+    
+  }
+
+    .filter__form.active{
+    opacity: 1;
+    
+    
+  }
+
+  .filter__form input{
+    margin-top: 0.5em;
+    margin-right: 0.62em;
+  }
+
+  form .h3 {
+    margin-top: 0.3em;
+    font-weight: bold;
+
+  }
+
+/* TELAS DIFERENTES ------------------------------------------------ */
+
+/* filtro nas telas grandes ok */
+@media screen and (min-width: 1199px) {
+
+
+  .filter__ret--purple {
+    position: fixed;
+
+    width: auto;
+    height: auto;
+
+  /* alinha o icone de novo na borda */
+    justify-content: space-between;
+  
+    
+    
+  }
+
+  .filter__form{
+    margin: 1em 0;
+    padding-right: 2em;
+    padding-bottom: 1em;
+    opacity: 1;
+    
+    
+  }
+
+  .filter__form input{
+    margin-right: 0.62em;
+    
+  }
+
+  form .h3 {
+    padding: 0.3em 0 0 0;
+    font-weight: bold;
+  }
+  
+  /*.ion-icon {*/
+    /*escondendo o ícone*/
+  /*opacity: 1;*/
+  
+  
+  /*}*/
+}
