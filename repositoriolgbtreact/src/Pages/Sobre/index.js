@@ -1,16 +1,16 @@
-import Header from './components/Header'
-import Filter from './components/Filter'
-import Footer from './components/Footer'
-import Main from './components/Main' 
+import React from "react";
 
+import Header from "../../components/Header";
+import Filter from "../../components/Filter";
+import Footer from "../../components/Footer";
+//import Main from "../../components/Main";
 
 function Sobre() {
-  return (
+	return (
 		<>
 			<Header />
 			<Filter />
-      <Main />
-      
+			{/*<Main />*/}
 
 			<h2>Sobre</h2>
 			<p>
@@ -47,8 +47,8 @@ function Sobre() {
 				tem algum texto que gostaria de incluir aqui? entre em contato comigo
 				nesse
 				<a href="mailto:charliebftm@gmail.com">Email</a>
-      </p>
-      <Footer/>
+			</p>
+			<Footer />
 		</>
 	);
 }

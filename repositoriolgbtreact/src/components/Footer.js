@@ -1,5 +1,7 @@
+import React from "react";
+
 function Footer() {
-  return (
+	return (
 		<footer className="footer">
 			<img
 				src="./assets/repositorio lgbt/coluna.png"

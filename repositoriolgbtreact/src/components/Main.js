@@ -1,3 +1,8 @@
+import React from 'react'
+import { Link } from "react-router-dom";
+import Text from "../Pages/Text";
+
+
 import { useState } from "react";
 import Filter from "./Filter.js";
 
@@ -181,15 +186,13 @@ function onCheckboxClick(checkboxArray) {
 
 }
 
-	const url = "../Text";
+	const url = Text;
 
 
 	return (
 		<>
 			<main>
-				<Filter
-					onCheckboxClick={onCheckboxClick}
-				/>
+				<Filter onCheckboxClick={onCheckboxClick} />
 				<section className="search content filter__flex">
 					<div className="search__text">
 						<FormBusca searchText={searchText} />
@@ -199,9 +202,9 @@ function onCheckboxClick(checkboxArray) {
 							{list.map(text => (
 								<div key={text.titulo}>
 									<h3>
-										<a href={url} className="title">
+										<Link to={url} className="title">
 											{text.titulo}
-										</a>
+										</Link>
 										<p className="icon">4.5</p>
 									</h3>
 									<p className="description">{text.descricao}</p> <br></br>

@@ -1,3 +1,5 @@
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import './App.css';
 import './Styles/reset.css'
@@ -12,9 +14,14 @@ import "./Styles/searchBar.css";
 import "./Styles/text.css";
 
 
-import Header from "./components/Header.js"
-import Main from './components/Main.js'
-import Footer from './components/Footer.js'
+//import Header from "./components/Header.js"
+//import Main from './components/Main.js'
+//import Footer from './components/Footer.js'
+
+// importando as rotas
+import Home from "./Pages/Home"
+import Sobre from "./Pages/Sobre";
+import Text from "./Pages/Text";
 
 
 
@@ -22,9 +29,16 @@ function App() {
 
 
   return (
-    <div className="App">
+		<div className="App">
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/Sobre" element={<Sobre />} />
+					<Route path="/Texto" element={<Text />} />
+				</Routes>
+			</Router>
 
-      <Header />
+			{/*<Header />
       <Main />
       
 
@@ -38,10 +52,9 @@ function App() {
 
       <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-      <Footer />
-    </div>
-
-  );
+      <Footer />*/}
+		</div>
+	);
 }
 
 export default App;
