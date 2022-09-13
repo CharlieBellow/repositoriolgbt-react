@@ -202,7 +202,7 @@ function onCheckboxClick(checkboxArray) {
 							{list.map(text => (
 								<div key={text.titulo}>
 									<h3>
-										<Link to={url} className="title">
+										<Link to='/Texto' className="title">
 											{text.titulo}
 										</Link>
 										<p className="icon">4.5</p>
