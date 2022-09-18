@@ -16,7 +16,7 @@ function Text() {
 			- tentar refazer o que foi feito e testar - não rolou
 			 - colocar o projeto na raiz onde tá o git e fazer o commit disso e depois testar
 			 - subir o projeto pela master na pasta/docs e colocar o build dentro da pasta /docs - nao rolou
-			 - criar um repositório separado para fazer o deploy
+			 - criar um repositório separado para fazer o deploy - também não rolou!
 			 * ajeitar o css do filtro e do site todo (ver a questão do icone)
 			 */}
 			<Footer />
