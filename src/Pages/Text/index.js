@@ -15,7 +15,7 @@ function Text() {
 			refazer o deploy:
 			- tentar refazer o que foi feito e testar - não rolou
 			 - colocar o projeto na raiz onde tá o git e fazer o commit disso e depois testar
-			 - subir o projeto pela master na pasta/docs e colocar o build dentro da pasta /docs 
+			 - subir o projeto pela master na pasta/docs e colocar o build dentro da pasta /docs - nao rolou
 			 - criar um repositório separado para fazer o deploy
 			 * ajeitar o css do filtro e do site todo (ver a questão do icone)
 			 */}
