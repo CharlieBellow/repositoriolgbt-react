@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { FaChevronRight } from "react-icons/fa";
-//import { FaChevronLeft } from "react-icons/fa";
+
 
 
 const initialCheckboxes = [
@@ -37,26 +37,35 @@ function Filter({ onCheckboxClick }) {
 
 	const [className, setClassName] = useState('');
 
-	function handleClass() {
-
-		if (className !== useState) {
-			setClassName(...className, !"active")
+	function handleClass(event) {
+		
+		if (event.target.className === "") {
+			event.target.classList.toggle("active");
 		} else {
-			setClassName(...className)
-
+			event.target.classList.toggle("")
 		}
-	}
+	} 
+			
+
+//		if (className !== useState) {
+//			setClassName(...className, !"active")
+//		} else {
+//			setClassName(...className)
 //
-//	function handleClassClose() {
-//		setClassName("close");
-//	}
+		//}
+	//}
+
 
 	return (
 		<>
 			<div calssName="content flex">
 				<div className={`filter__ret--purple content ${className}`}>
-					<div className={`icone ${className}`} onClick={handleClass}>
-						<FaChevronRight size={16} />
+					<div className={`${className}`}>
+						<FaChevronRight
+							className="icon__svg"
+							size={16}
+							onClick={handleClass}
+						/>
 					</div>
 					<div name="filtro" className={`filter__form ${className}`}>
 						<h3 className="h3">Filtro:</h3>

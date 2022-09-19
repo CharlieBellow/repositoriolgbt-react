@@ -1,13 +1,10 @@
 import React from "react";
+import favicon from "../assets/repositorio lgbt/coluna.png";
 
 function Footer() {
 	return (
 		<footer className="footer">
-			<img
-				src="./assets/repositorio lgbt/coluna.png"
-				alt="favicon"
-				className="footer__logo"
-			></img>
+			<img src={favicon} alt="favicon" className="footer__logo"></img>
 			<ul className="footer__social">
 				<li>
 					<a href="mailto:charliebftm@gmail.com" className="footer__midia">

@@ -186,7 +186,10 @@ function onCheckboxClick(checkboxArray) {
 
 }
 
-	//const url = Text;
+
+		
+
+	//}
 
 
 	return (

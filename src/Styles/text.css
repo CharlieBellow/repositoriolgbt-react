@@ -1,4 +1,5 @@
 
+
 .flexbox {
   display:flex;
   align-items: flex-start;
@@ -9,6 +10,7 @@
 .text > h2, h3 {
   font-weight: 700;
   font-size: 1em;
+  margin: 1rem 0;
 }
 
 
@@ -37,13 +39,6 @@
 }
 
 /* comentários ------------------------- */
-.iconComent::after {
-  font-family: 'Material Icons';
-  color: var(--texto);
-  content: "\f09a \f09a \f09a \f09a \f09a";
-
-
-}
 
 .comment {
 
@@ -53,6 +48,26 @@
   padding: 16px;
   width: 70%;
 
+}
+
+.br-textarea > label {
+  display: flex;
+}
+
+.key__word {
+  padding-top: 1rem;
+}
+
+
+.key__word > strong {
+  font-weight: bold;
+}
+a {
+  padding-left: 0.3rem;
+}
+a:hover {
+  color: blue;
+  text-decoration: underline;
 }
 
 #textarea-id3 {
@@ -69,6 +84,21 @@
   border-radius: 6px;
   align-items: center;
 
+}
+
+.icons__div {
+  display: flex;
+  align-items: flex-start;
+  width:100%;
+  padding-left: .5rem;;
+}
+
+.aqui::after {
+  background: red;
+}
+
+.aqui::before {
+  background: blue;
 }
 
 .evaluation button {
@@ -95,12 +125,7 @@
   color: var(--green);
 }
 
-.comment__icon:before {
-  font-family: 'Material Icons';
-  content: "\f09a";
-  color: var(--green);
 
-}
 
 .comment__test {
   display: flex;
@@ -158,6 +183,8 @@ div.perfil p:hover {
     margin: 3em auto
   }
 
+
+
   #textarea-id3 {
     width: 100%;
     height: auto;
@@ -166,12 +193,6 @@ div.perfil p:hover {
   .comments {
 
   max-width: 100%;
-}
-
-.comment {
-  padding: 16px;
-  width: auto;
-
 }
 
 
