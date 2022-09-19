@@ -1,5 +1,8 @@
 import React from "react";
 import { useState } from "react";
+import { FaChevronRight } from "react-icons/fa";
+//import { FaChevronLeft } from "react-icons/fa";
+
 
 const initialCheckboxes = [
 	{ name: "lesbica", check: false },
@@ -32,17 +35,31 @@ function Filter({ onCheckboxClick }) {
 		onCheckboxClick(updatedCheckboxes);
 	}
 
-	let className = "active";
+	const [className, setClassName] = useState('');
+
+	function handleClass() {
+
+		if (className !== useState) {
+			setClassName(...className, !"active")
+		} else {
+			setClassName(...className)
+
+		}
+	}
+//
+//	function handleClassClose() {
+//		setClassName("close");
+//	}
 
 	return (
 		<>
 			<div calssName="content flex">
-				<div className="filter__ret--purple content ">
-					<div name="filtro" className="filter__form">
+				<div className={`filter__ret--purple content ${className}`}>
+					<div className={`icone ${className}`} onClick={handleClass}>
+						<FaChevronRight size={16} />
+					</div>
+					<div name="filtro" className={`filter__form ${className}`}>
 						<h3 className="h3">Filtro:</h3>
-						<div className={`ion-icon ${className}`}>
-							<ion-icon name="chevron-forward-outline"></ion-icon>
-						</div>
 						<div>
 							{listChecks.map(checkbox => (
 								<div key={checkbox.name}>
@@ -51,7 +68,7 @@ function Filter({ onCheckboxClick }) {
 										type="checkbox"
 										name={checkbox.name}
 										id={checkbox.name}
-										onChange={handleClick}
+										onClick={handleClick}
 										checked={checkbox.check}
 									/>
 									<label htmlFor={checkbox.name}>{checkbox.name}</label>

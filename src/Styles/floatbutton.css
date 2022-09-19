@@ -6,78 +6,56 @@
   display: flex;
   align-items: center;
   /* alinha o icone de novo no centro */
-  justify-content: center;
+  /*justify-content: center;*/
   flex-direction: row-reverse;
-  width: auto;
-  
+  width: 2rem; /* 2rem */
+  margin-top: -2.3rem;
+  font-size: 14px;
+  text-align: justify;
 
   border-radius: 0px 100px 100px 0px;
   
   background: var(--light-purple);
-  
-  text-align: justify;
-  font-size: 16px;
-  padding: 5px 0;
 
-  
 
-  max-height: 70vh;
+  height: 60vh;
   transition: 0.5s;
   
 
   
 }
 
-.ion-icon {
-  /*position: fixed;*/
-  opacity: 2;
-  color: green;
-  width: 500px;
+
+svg:active {
+  rotate: 180deg;
   
 }
 
-/*.ion-icon.active {*/
-  /* fazer aquele lance das setinhas mudarem de direção */
-  /*opacity: 0;*/
-  /*content: "\2039";*/
-  /*opacity: 0;*/
-  
-/*}*/
-
-
 
 /* active */
-  .filter__ret--purple.active {
-      margin-left: 0;
-      width: auto;
-
+  .filter__ret--purple:active{
+  /* alinha o icone de novo no centro */
+  justify-content: center;
+  width: auto;
     /* alinha o icone de novo na borda */
     justify-content: space-between;
   }
 
 
 
-  .filter__form{
-    padding: 0 2em;
+  .filter__form:active{
+    /*padding: 0 2em;*/
     opacity: 1;
     
   }
 
-    .filter__form.active{
-    opacity: 1;
-    
-    
+  .filter__form:active input{
+    /*margin-top: 0.5em;*/
+    /*margin-right: 0.62em;*/
   }
 
-  .filter__form input{
-    margin-top: 0.5em;
-    margin-right: 0.62em;
-  }
-
-  form .h3 {
-    margin-top: 0.3em;
+  h3 {
     font-weight: bold;
-
   }
 
 /* TELAS DIFERENTES ------------------------------------------------ */
@@ -118,10 +96,10 @@
     font-weight: bold;
   }
   
-  /*.ion-icon {*/
+  svg {
     /*escondendo o ícone*/
-  /*opacity: 1;*/
+  opacity: 0;
   
   
-  /*}*/
+  }
 }
