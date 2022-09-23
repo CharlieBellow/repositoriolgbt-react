@@ -143,3 +143,7 @@ O state do componente é similar as props, mas é privado e totalmente controlad
 
 obs.: Em React, no entanto, a convenção é usar nomes on[Event] para propriedades que representam eventos e handle[Event] para metodos que manipulam os eventos
  Então sempre que for criar um evento de click usa on e quando for chamar um métido que vai executar uma ação de modificar o elemento, usa o handle
+
+  ## Deploy:
+
+Vercel ou Heroku - pesquisar p/ fazer o deploy

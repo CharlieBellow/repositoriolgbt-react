@@ -10,7 +10,7 @@ import "../Styles/text.css"
 function TextView() {
 	return (
 		<>
-			<aside className="block">
+			<aside className="block textPage">
 				<div className="flexbox">
 					<section className="text">
 						<h2 className="text__title">

@@ -1,4 +1,6 @@
-
+.textPage {
+ padding: 0 1.5rem;
+}
 
 .flexbox {
   display:flex;
@@ -123,8 +125,14 @@ a:hover {
 
 .comment__icon {
   color: var(--green);
+  display: flex;
+  
 }
 
+.comment__icon > svg {
+  margin: 0 0.25rem;
+  
+}
 
 
 .comment__test {
