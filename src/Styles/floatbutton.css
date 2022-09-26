@@ -1,14 +1,37 @@
 /* FILTRO --------------------------- */
 /* fixar o filtro na tela */
+#toggle, .filter__form {
+  display: none;
+}
+
+#toggle:checked + .checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  height: auto;
+}
+
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  height: 60vh;
+  
+}
+
+#toggle:checked + .checkbox-wrapper .icon__svg {
+  rotate: 180deg;
+}
+
+#toggle:checked + .checkbox-wrapper .filter__form {
+  display: block;
+}
+
 .filter__ret--purple {
 
   position: fixed;
   display: flex;
   align-items: center;
-  /* alinha o icone de novo no centro */
-  /*justify-content: center;*/
   flex-direction: row-reverse;
-  width: 2rem; /* 2rem */
+  width: auto;
   margin-top: -2.3rem;
   font-size: 14px;
   text-align: justify;
@@ -17,44 +40,20 @@
   
   background: var(--light-purple);
 
-
   height: auto;
-  transition: 0.5s;
   
+}
 
+.filter__form{
+  padding: 0 .5rem;
   
 }
 
 
-.icon__svg:active {
-  rotate: 180deg;
-  
-}
-
-/* active */
-  .filter__ret--purple:active{
-  /* alinha o icone de novo no centro */
-  justify-content: center;
-  width: auto;
-    /* alinha o icone de novo na borda */
-    justify-content: space-between;
-  }
-
-
-
-  .filter__form:active{
-    /*padding: 0 2em;*/
-    opacity: 1;
-    
-  }
-
-  .filter__form:active input{
-    /*margin-top: 0.5em;*/
-    /*margin-right: 0.62em;*/
-  }
-
-  h3 {
+  h3.h3{
     font-weight: bold;
+    margin: 0;
+    padding: 0; 
   }
 
 /* TELAS DIFERENTES ------------------------------------------------ */
@@ -77,12 +76,15 @@
   }
 
   .filter__form{
-    margin: 1em 0;
     padding-right: 2em;
     padding-bottom: 1em;
-    opacity: 1;
+    display: block;
     
     
+  }
+
+  .checkbox-wrapper {
+    height: auto;
   }
 
   .filter__form input{
@@ -96,9 +98,6 @@
   }
   
   svg {
-    /*escondendo o ícone*/
-  opacity: 0;
-  
-  
+  display: none;
   }
 }
