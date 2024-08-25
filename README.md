@@ -4,7 +4,7 @@
 
 # Repositório LGBT
 
-É um site de filtragem de textos feito com React. Esse foi o meu primeiro projeto. Eu fiz esse site para filtrar os textos que utilizei durante o meu mestrado em Psicologia que conciliava junto com meus estudos de Programação. Foi com esse projeto que comecei a aplicar meus conhecimentos em Javascript (aqui no Github tem uma versão dele em Javascript puro. E depois migrei para React). Foi muito bom revisitá-lo e ver o quanto eu evoluí! Esse projeto precisa de muitas melhorias, irei traalhar nisso assim que possível! 
+É um site de filtragem de textos feito com React. Esse foi o meu primeiro projeto. Eu fiz esse site para filtrar os textos que utilizei durante o meu mestrado em Psicologia que conciliava junto com meus estudos de Programação. Foi com esse projeto que comecei a aplicar meus conhecimentos em Javascript (aqui no Github tem uma versão dele em Javascript puro. E depois migrei para React). Foi muito bom revisitá-lo e ver o quanto eu evoluí! Esse projeto precisa de muitas melhorias, irei trabalhar nisso assim que possível! 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
